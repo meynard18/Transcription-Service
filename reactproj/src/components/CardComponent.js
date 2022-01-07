@@ -5,6 +5,7 @@ import {
    Grid,
    Typography,
    Card,
+   CardMedia,
 } from '@material-ui/core';
 import { styled } from '@mui/material/styles';
 import icon from './images/icon3.png';
@@ -47,8 +48,7 @@ const useStyles = makeStyles(() => ({
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
-  
-   }
+   },
 }));
 
 function CardComponent() {
@@ -56,14 +56,16 @@ function CardComponent() {
 
    return (
       <Grid container direction="row" justifyContent="center" spacing={8}>
-        
          {cardContents.map((item) => (
             <Grid item xs={7} md={3}>
                <Card sx={{ maxWidth: 250 }} className={classes.card}>
                   <div className={classes.imageContainer}>
-                     <img src={item.cardImg} className={classes.image} />
-                     
-                   
+                     <CardMedia
+                        component="img"
+                        image={item.cardImg}
+                        alt="green iguana"
+                        className={classes.image}
+                     />
                   </div>
 
                   <CardContent>

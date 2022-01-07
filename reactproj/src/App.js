@@ -5,7 +5,8 @@ import Home from './pages/Home';
 import Transcriptions from './pages/Transcriptions';
 // import Login from './pages/Login';
 import Faq from './pages/Faq';
-// import SignUp from './pages/SignUp';
+import Login from './pages/Login';
+import Register from "./pages/Register";
 // import ScrollToTop from './components.ScrolltoTop';
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
                      element={<Transcriptions />}
                   ></Route>
                   <Route exact path="/faq" element={<Faq />}></Route>
-                  {/* <Route exact path="/login" element={<Login />}></Route> */}
+                  <Route exact path="/login" element={<Login />}></Route>
+                  <Route exact path="/registration" element={<Register />} />
                </Routes>
             </div>
          </div>

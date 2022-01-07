@@ -1,153 +1,204 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
-import { NavLink } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SignUp from './SignUp';
+import React, { useState } from "react";
+import Register from "./Register";
+import { Link } from "react-router-dom";
+import email from "../components/images/email.png";
+import lock from "../components/images/lock.png";
+import profile from "../components/images/icon.jpg";
+import UseForm from "../components/UseForm";
 
-function Login() {
-   const bgStyle = {
-      backgroundColor: '#440a67',
+function Login({ submitForm }) {
+   // const [emaillog, setEmaillog] = useState(" ");
+   // const [passwordlog, setPasswordlog] = useState(" ");
+   const { handleChange, handleFormSubmit, values, errors } = UseForm(
+      submitForm
+   );
+   const navLinks = {
+      width: "50%",
+      display: "flex",
+      justifyContent: "space-around",
+      alignItems: "center",
+      listStyle: "none"
    };
 
-   const container = {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100vh',
-      // maxWidth: "500px",
-      width: '100vw',
-      margin: 'auto',
+   const error = {
+      color: "red",
+      fontSize: "15px",
+      fontWeight: "bold"
    };
 
-   const form = {
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '100vw',
-      // border: "1px solid #dfdfdf",
-      padding: '20px',
-      // borderRadius: "5px",
-      background: '#440a67',
+   const link = {
+      listStyle: "none",
+      textDecoration: "none",
+      color: "white"
+   };
+
+   const main = {
+      textAlign: "center",
+      justifyContent: "center",
+
+      display: "flex",
+      padding: "90px 0 90px 0"
+   };
+   const main2 = {
+      textAlign: "center",
+      justifyContent: "center",
+      alignItems: "center",
+      // height: "100vh",
+      display: "flex",
+      padding: "90px 0 90px 0",
+      backgroundColor: "#440a67"
+   };
+
+   const subMain = {
+      display: "flex",
+      justifyContent: "center",
+      height: "550px",
+      backgroundColor: "#440a67"
+   };
+
+   const input = {
+      width: "300px",
+      height: "50px",
+      borderRadius: "60px",
+      backgroundColor: "#ffe3fe"
+   };
+
+   const imgs = {
+      paddingTop: "20px",
+      justifyContent: "center",
+      display: "flex"
+   };
+
+   const containerImage = {
+      borderRadius: "150px",
+      alignItems: "center",
+      display: "flex",
+      height: "115px",
+      width: "115px"
+   };
+
+   const profileIcon = {
+      height: "130px",
+      width: "130",
+      borderRadius: "130px"
+   };
+
+   const lHeader = {
+      textAlign: "center",
+      color: "#ffe3f3"
+   };
+   const emailIcon = {
+      height: "25px",
+      width: "35px",
+      position: "absolute",
+      padding: "15px 0 0 15px",
+      border: "none",
+      outline: "none"
+   };
+   const fill = {
+      paddingLeft: "70px",
+      fontSize: "20px"
+   };
+
+   const secondInput = {
+      paddingTop: "20px"
    };
 
    const button = {
-      background: '#93329e',
-      margin: '10px auto',
-   };
-   const paragraph = {
-      color: '#ffe3fe',
-   };
-   const field = {
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
+      width: "260px",
+      height: "50px",
+      borderRadius: "60px",
+      backgroundColor: "#93329e",
+      color: "#ffe3fe",
+      fontSize: "25px",
+      border: "none"
    };
 
-   const labelColor = {
-      color: '#ffe3fe',
+
+   const loginBtn = {
+      paddingTop: "20px"
+   }
+
+   const regLink = {
+      paddingTop: "10px"
+   }
+
+   const mailId = {
+      paddingTop: "20px"
    };
 
-   const initialValues = { username: '', email: '', password: '' };
-   const [formValues, setFormValues] = useState(initialValues);
-   const [formErrors, setFormErrors] = useState({});
-   const [isSubmit, setIsSubmit] = useState(false);
-   const handleChange = (e) => {
-      const { name, value } = e.target;
-      setFormValues({ ...formValues, [name]: value });
+   const pList = {
+      paddingRight: "10px",
+      fontSize: "25px"
+   };
+   const rHeader = {
+      color: "#ffe3fe"
    };
 
-   const handleSubmit = (e) => {
-      e.preventDefault();
-      setFormErrors(validate(formValues));
-      setIsSubmit(true);
-   };
-
-   useEffect(() => {
-      console.log(formErrors);
-      if (Object.keys(formErrors).length === 0 && isSubmit) {
-         console.log(formValues);
-      }
-   }, [formErrors, formValues, isSubmit]);
-   const validate = (values) => {
-      const errors = {};
-      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-      if (!values.username) {
-         errors.username = 'Username is required!';
-      }
-      if (!values.email) {
-         errors.email = 'Email is required!';
-      } else if (!regex.test(values.email)) {
-         errors.email = 'This is not a valid email format!';
-      }
-      if (!values.password) {
-         errors.password = 'Password is required';
-      } else if (values.password.length < 4) {
-         errors.password = 'Password must be more than 4 characters';
-      } else if (values.password.length > 1000) {
-         errors.password = 'Password cannot exceed more than 1000 characters';
-      }
-      return errors;
+   const content = {
+      textAlign: "center",
+      display: "flex",
+      justifyContent: "center",
    };
 
    return (
-      <div style={bgStyle}>
-         <div style={container}>
-            {Object.keys(formErrors).length === 0 && isSubmit ? (
-               <div style={labelColor}>Signed in successfully</div>
-            ) : (
-               <pre>{JSON.stringify()}</pre>
-            )}
+      <div style={content}>
+         {/* <div }> */}
+         <form style={main2}>
+            <div style={main}>
+               <div style={subMain}>
+                  <div>
+                     <div style={imgs}>
+                        <div style={containerImage}>
+                           <img src={profile} alt="profile" style={profileIcon} />
+                        </div>
+                     </div>
+                     <div>
+                        <h1 style={lHeader}>Login</h1>
+                        <div>
+                           <img src={email} alt="email" style={emailIcon} />
+                           <input
+                              type="email"
+                              placeholder="Enter Email-id"
+                              // className="fill"
+                              style={fill}
+                              name="email"
+                              value={values.email}
+                              onChange={handleChange}
+                           />
+                           {errors.email && <p style={error}>{errors.email}</p>}
+                        </div>
+                        <div style={secondInput}>
+                           <img src={lock} alt="password" style={emailIcon} />
+                           <input
+                              type="password"
+                              placeholder="Enter Password"
+                              style={fill}
+                              name="password"
+                              value={values.password}
+                              onChange={handleChange}
+                           />
+                           {errors.password && <p style={error}>{errors.password}</p>}
+                        </div>
 
-            <form style={form} onSubmit={handleSubmit}>
-               <h1>Login Form</h1>
-               {/* <div className="ui divider"></div> */}
-               <div style={form}>
-                  <div style={field}>
-                     <label style={labelColor}>Username</label>
-                     <input
-                        type="text"
-                        name="username"
-                        placeholder="Username"
-                        value={formValues.username}
-                        onChange={handleChange}
-                     />
+                        <div style={loginBtn}>
+                           <Link to="/services">
+                              <button type="button">Login</button>
+                              {/* style={loginBtn} */}
+                           </Link>
+                        </div>
+                        <div style={regLink}>
+                           <Link style={link} to="/registration">
+                              <li>Register Now</li>
+                           </Link>
+                        </div>
+                     </div>
                   </div>
-                  <p style={paragraph}>{formErrors.username}</p>
-                  <div style={field}>
-                     <label style={labelColor}>Email</label>
-                     <input
-                        type="text"
-                        name="email"
-                        placeholder="Email"
-                        value={formValues.email}
-                        onChange={handleChange}
-                     />
-                  </div>
-                  <p style={paragraph}>{formErrors.email}</p>
-                  <div style={field}>
-                     <label style={labelColor}>Password</label>
-                     <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        value={formValues.password}
-                        onChange={handleChange}
-                     />
-                  </div>
-                  <p style={paragraph}>{formErrors.password}</p>
-                  <button style={button}>Submit</button>
                </div>
-            </form>
-         </div>
-         <div>
-            Don't have an account yet? Click
-            <NavLink to="/signup">Here</NavLink>
-         </div>
+            </div>
+         </form>
       </div>
+      // </div>
    );
 }
 

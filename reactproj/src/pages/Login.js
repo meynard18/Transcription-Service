@@ -37,7 +37,7 @@ function Login({ submitForm }) {
       justifyContent: "center",
 
       display: "flex",
-      padding: "90px 0 90px 0"
+      padding: "40px 10px 40px 10px"
    };
    const main2 = {
       textAlign: "center",
@@ -45,14 +45,16 @@ function Login({ submitForm }) {
       alignItems: "center",
       // height: "100vh",
       display: "flex",
-      padding: "90px 0 90px 0",
-      backgroundColor: "#440a67"
+      padding: "40px 10px 40px 10px",
+      backgroundColor: "#440a67",
+      marginTop: "5%",
+      width: "50%"
    };
 
    const subMain = {
       display: "flex",
       justifyContent: "center",
-      height: "550px",
+      height: "50vh",
       backgroundColor: "#440a67"
    };
 
@@ -139,6 +141,7 @@ function Login({ submitForm }) {
       textAlign: "center",
       display: "flex",
       justifyContent: "center",
+      // height: "100%"
    };
 
    return (

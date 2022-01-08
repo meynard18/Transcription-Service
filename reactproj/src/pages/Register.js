@@ -10,7 +10,7 @@ function Register({ submitForm }) {
     const { handleChange, handleFormSubmit, values, errors } = UseForm(
         submitForm
     );
-    const LOCAL_STORAGE_KEY = "Info";
+    // const LOCAL_STORAGE_KEY = "Info";
 
     const [Info, setInfo] = useState({
         name: "",
@@ -43,7 +43,7 @@ function Register({ submitForm }) {
         justifyContent: "center",
 
         display: "flex",
-        padding: "90px 0 90px 0"
+        padding: "40px 10px 40px 10px"
     };
     const main2 = {
         textAlign: "center",
@@ -51,14 +51,16 @@ function Register({ submitForm }) {
         alignItems: "center",
         // height: "100vh",
         display: "flex",
-        padding: "90px 0 90px 0",
-        backgroundColor: "#440a67"
+        padding: "40px 10px 40px 10px",
+        backgroundColor: "#440a67",
+        marginTop: "5%",
+        width: "50%"
     };
 
     const subMain = {
         display: "flex",
         justifyContent: "center",
-        height: "550px",
+        height: "50vh",
         backgroundColor: "#440a67"
     };
 
@@ -145,17 +147,18 @@ function Register({ submitForm }) {
         textAlign: "center",
         display: "flex",
         justifyContent: "center",
+        // height: "100%"
     };
 
 
-    useEffect(() => {
-        const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-        if (retriveContacts) setInfo(retriveContacts);
-    }, []);
+    // useEffect(() => {
+    //     const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    //     if (retriveContacts) setInfo(retriveContacts);
+    // }, []);
 
-    useEffect(() => {
-        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(Info));
-    }, [Info]);
+    // useEffect(() => {
+    //     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(Info));
+    // }, [Info]);
 
     let register = (e) => {
         e.preventDefault();

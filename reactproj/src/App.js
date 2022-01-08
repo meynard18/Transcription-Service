@@ -28,7 +28,7 @@ function App() {
                   ></Route>
                   <Route exact path="/faq" element={<Faq />}></Route>
                   <Route exact path="/login" element={<Login />}></Route>
-                  <Route exact path="/registration" element={<Register />} />
+                  <Route exact path="/register" element={<Register />} />
                </Routes>
             </div>
          </div>

@@ -188,7 +188,7 @@ function Login({ submitForm }) {
                            </Link>
                         </div>
                         <div style={regLink}>
-                           <Link style={link} to="/registration">
+                           <Link style={link} to="/register">
                               <li>Register Now</li>
                            </Link>
                         </div>

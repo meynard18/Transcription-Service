@@ -1,20 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import Login from './Login';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import mail from '../components/images/email.png';
 import lock from '../components/images/lock.png';
 import profile from '../components/images/icon.jpg';
-import UseForm from '../components/UseForm';
+import axios from 'axios';
+import swal from 'sweetalert';
 
-function Register({ submitForm }) {
-   
+function Register() {
+   const history = useNavigate();
 
-   const [Info, setInfo] = useState({
+   const [userInfo, setUser] = useState({
       firstName: '',
       lastName: '',
       email: '',
       password: '',
+      error_list: [],
    });
+
+
    const navLinks = {
       width: '50%',
       display: 'flex',
@@ -22,6 +25,39 @@ function Register({ submitForm }) {
       alignItems: 'center',
       listStyle: 'none',
    };
+
+   const handleInput = (e) => {
+      e.persist();
+      setUser({ ...userInfo, [e.target.name]: e.target.value });
+   };
+ 
+   const saveUser = (e) => {
+      e.preventDefault();
+      const data = {
+         firstName: userInfo.firstName,
+         lastName: userInfo. lastName,
+         email: userInfo.email,
+         password:  userInfo.password,
+
+      };
+
+      axios.post(`api/register`, data).then((res) => {
+         if (res.data.status === 200) {
+            swal('Success', res.data.message, 'Success');
+            setUser({
+               firstName: '',
+               lastName: '',
+               email: '',
+               password: '',
+               error_list: [],
+            });
+    
+            history.push('/register');
+         } else if (res.data.status === 422) {
+            setUser({ ...userInfo, error_list: res.data.validate_err });
+         }
+      });
+   }
 
    const error = {
       color: 'red',
@@ -147,7 +183,7 @@ function Register({ submitForm }) {
 
    return (
       <div style={content}>
-         <form  style={main2}>
+         <form onSubmit={saveUser} method="POST" style={main2}>
             <div style={main}>
                <div style={subMain}>
                   <div>
@@ -157,12 +193,12 @@ function Register({ submitForm }) {
                            <img src={profile} alt="firstName" style={emailIcon} />
                            <input
                               type="text"
-                              firstName="firstName"
+                              name="firstName"
                               placeholder="First Name"
                               required
                               style={fill}
-                              // value={values.firstName}
-                              // onChange={handleChange}
+                              value={userInfo.firstName}
+                              onChange={handleInput}
                            />
                            
                         </div>
@@ -170,12 +206,12 @@ function Register({ submitForm }) {
                            <img src={profile} alt="Last Name" style={emailIcon} />
                            <input
                               type="text"
-                              lastName="lastName"
+                              name="lastName"
                               placeholder="Last Name"
                               required
                               style={fill}
-                              // value={values.lastName}
-                              // onChange={handleChange}
+                              value={userInfo.lastName}
+                              onChange={handleInput}
                            />
                           
                         </div>
@@ -187,8 +223,8 @@ function Register({ submitForm }) {
                               placeholder="Enter Email-id"
                               require
                               style={fill}
-                              // value={values.email}
-                              // onChange={handleChange}
+                              value={userInfo.email}
+                              onChange={handleInput}
                            />
                           
                         </div>
@@ -200,8 +236,8 @@ function Register({ submitForm }) {
                               placeholder="Enter New Password"
                               style={fill}
                               required
-                              // value={values.password}
-                              // onChange={handleChange}
+                              value={userInfo.password}
+                              onChange={handleInput}
                            />
                            
                         </div>

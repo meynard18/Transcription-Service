@@ -7,9 +7,7 @@ import profile from '../components/images/icon.jpg';
 import UseForm from '../components/UseForm';
 
 function Register({ submitForm }) {
-   const { handleChange, handleFormSubmit, values, errors } =
-      UseForm(submitForm);
-   const LOCAL_STORAGE_KEY = 'Info';
+   
 
    const [Info, setInfo] = useState({
       firstName: '',
@@ -145,29 +143,11 @@ function Register({ submitForm }) {
       justifyContent: 'center',
    };
 
-   useEffect(() => {
-      const retriveContacts = JSON.parse(
-         localStorage.getItem(LOCAL_STORAGE_KEY)
-      );
-      if (retriveContacts) setInfo(retriveContacts);
-   }, []);
-
-   useEffect(() => {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(Info));
-   }, [Info]);
-
-   let register = (e) => {
-      e.preventDefault();
-
-      if (!Info.firstName || !Info.lastName || !Info.email || !Info.password) {
-         alert('Complete all the fields!!!');
-         return;
-      }
-   };
+ 
 
    return (
       <div style={content}>
-         <form onSubmit={register} style={main2}>
+         <form  style={main2}>
             <div style={main}>
                <div style={subMain}>
                   <div>
@@ -181,12 +161,10 @@ function Register({ submitForm }) {
                               placeholder="First Name"
                               required
                               style={fill}
-                              value={values.firstName}
-                              onChange={handleChange}
+                              // value={values.firstName}
+                              // onChange={handleChange}
                            />
-                           {errors.firstName && (
-                              <p style={error}>{errors.firstName}</p>
-                           )}
+                           
                         </div>
                         <div>
                            <img src={profile} alt="Last Name" style={emailIcon} />
@@ -196,12 +174,10 @@ function Register({ submitForm }) {
                               placeholder="Last Name"
                               required
                               style={fill}
-                              value={values.lastName}
-                              onChange={handleChange}
+                              // value={values.lastName}
+                              // onChange={handleChange}
                            />
-                           {errors.firstName && (
-                              <p style={error}>{errors.lastName}</p>
-                           )}
+                          
                         </div>
                         <div style={mailId}>
                            <img src={mail} alt="email" style={emailIcon} />
@@ -211,10 +187,10 @@ function Register({ submitForm }) {
                               placeholder="Enter Email-id"
                               require
                               style={fill}
-                              value={values.email}
-                              onChange={handleChange}
+                              // value={values.email}
+                              // onChange={handleChange}
                            />
-                           {errors.email && <p style={error}>{errors.email}</p>}
+                          
                         </div>
                         <div style={mailId}>
                            <img src={lock} alt="email" style={emailIcon} />
@@ -224,12 +200,10 @@ function Register({ submitForm }) {
                               placeholder="Enter New Password"
                               style={fill}
                               required
-                              value={values.password}
-                              onChange={handleChange}
+                              // value={values.password}
+                              // onChange={handleChange}
                            />
-                           {errors.password && (
-                              <p style={error}>{errors.password}</p>
-                           )}
+                           
                         </div>
 
                         <div style={loginBtn}>

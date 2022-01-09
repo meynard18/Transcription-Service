@@ -18,13 +18,6 @@ function Register() {
     });
 
 
-    const navLinks = {
-        width: '50%',
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        listStyle: 'none',
-    };
 
     const handleInput = (e) => {
         e.persist();
@@ -58,6 +51,14 @@ function Register() {
             }
         });
     }
+    const navLinks = {
+        width: '50%',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        listStyle: 'none',
+    };
+
 
     const error = {
         color: "red",

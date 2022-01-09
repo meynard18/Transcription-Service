@@ -110,7 +110,7 @@ function Navbar() {
                   </NavLink>
 
                   <Link
-                     to="/contactUs"
+                     to="contactUs"
                      className={classes.link}
                      activeClass="active"
                      spy={true}

@@ -18,7 +18,6 @@ function Register() {
     });
 
 
-
     const handleInput = (e) => {
         e.persist();
         setUser({ ...userInfo, [e.target.name]: e.target.value });
@@ -51,14 +50,14 @@ function Register() {
             }
         });
     }
-    const navLinks = {
-        width: '50%',
-        display: 'flex',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        listStyle: 'none',
-    };
 
+    const navLinks = {
+        width: "50%",
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        listStyle: "none"
+    };
 
     const error = {
         color: "red",
@@ -183,7 +182,6 @@ function Register() {
         justifyContent: "center",
         // height: "100%"
     };
-
 
 
 

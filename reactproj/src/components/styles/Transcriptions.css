@@ -32,3 +32,49 @@
     background-color: #93329E;
     color: #FFE3FE;
 }
+.song-list {
+    height: 100vh;
+}
+
+@media screen and (max-width: 768px) {
+    .hero2-text {
+        position: absolute;
+        top: 140px;
+        left: 0;
+        margin-left: 25%;
+    }
+    
+    .ht2 {
+        font-size: 60px;
+    }
+
+    .actions {
+        display: flex;
+    }
+
+    .song-list {
+        height: 110vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .hero2-text {
+        position: absolute;
+        top: 120px;
+        left: 0;
+        margin-left: 25%;
+    }
+    
+    .ht2 {
+        font-size: 50px;
+    }
+
+    .actions {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .song-list {
+        height: 420vh;
+    }
+}

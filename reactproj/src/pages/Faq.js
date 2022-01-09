@@ -28,7 +28,17 @@ function Faq() {
                   </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                     <div class="accordion-body">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Donec lacinia vel lectus malesuada mattis. 
+                        Sed et augue vulputate neque commodo sodales. 
+                        Suspendisse vel sem finibus, volutpat nisl commodo, porttitor elit. 
+                        Quisque vitae purus eu felis scelerisque semper. 
+                        Etiam consequat non magna gravida vestibulum. 
+                        Nunc blandit feugiat lacus in placerat. 
+                        Quisque ut turpis felis. 
+                        Integer vel interdum quam. Nulla ac consequat urna.
+                     </div>
                   </div>
                </div>
                <div class="accordion-item">
@@ -38,7 +48,17 @@ function Faq() {
                   </button>
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                     <div class="accordion-body">
+                        Integer ut risus libero. 
+                        Etiam posuere diam efficitur orci dictum, a venenatis quam varius. 
+                        Nullam non accumsan velit, sit amet lacinia est. 
+                        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
+                        Duis in purus consequat, iaculis nisl et, interdum odio. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut ac pretium elit. Sed semper, ante eu eleifend posuere, tortor lorem eleifend tortor, non viverra est tellus sagittis tortor. 
+                        Phasellus elementum ipsum non lacinia lobortis. 
+                        Vivamus dolor dui, pellentesque lacinia pharetra quis, ultricies sit amet lorem. 
+                        Quisque blandit metus luctus, posuere nunc id, blandit tortor. Sed sit amet leo ante. 
+                        Vestibulum dolor odio, blandit ut ipsum porta, tempus commodo urna. 
+                     </div>
                   </div>
                </div>
                <div class="accordion-item">
@@ -48,7 +68,18 @@ function Faq() {
                   </button>
                   </h2>
                   <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                     <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                     <div class="accordion-body">
+                        Quisque in porta nunc, vel fermentum risus. 
+                        Etiam neque ligula, interdum tempus cursus id, hendrerit ut mauris. 
+                        Donec sodales mattis molestie. Maecenas facilisis, massa sagittis rhoncus dapibus, arcu eros sollicitudin dolor, eget mattis turpis lacus dapibus tellus. 
+                        Nulla elementum rhoncus tempor. Cras nec lectus sit amet erat ultricies tristique. 
+                        Ut dignissim odio aliquam nibh finibus eleifend. Sed vel dui porttitor dui maximus ultrices sit amet venenatis diam. 
+                        Nulla vehicula sem massa, vel interdum magna pretium vitae. Phasellus fringilla risus ipsum, sit amet viverra ipsum elementum sit amet. 
+                        Suspendisse quis dictum libero. Nulla at nisi venenatis, mollis mi id, laoreet risus. 
+                        Donec in aliquet magna. 
+                        Cras tempor sagittis risus vel malesuada. Sed vitae ex eget ante fermentum finibus id in ligula. 
+                        Pellentesque porta semper sapien, non sagittis orci convallis at. 
+                     </div>
                   </div>
                </div>
             </div> 

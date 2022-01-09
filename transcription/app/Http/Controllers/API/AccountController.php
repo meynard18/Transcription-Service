@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Validator;
 
 class AccountController extends Controller
 {
+    public function index () {
+        $account = Account::all();
+        return response()->json(['status'=>200, "accounts"=>$account]);
+    }
+
     public function create(Request $request) {
         $validator = Validator::make($request->all(),[
             "firstName"=>"required", 
@@ -26,6 +31,17 @@ class AccountController extends Controller
             $account->password=$request->input('password');
             $account->save(); //query builder orm
             return response()->json(['status'=>200, 'message'=>'Account added Successfully']);
+        }
+    }
+
+    public function delete ($id) {
+        $account = Account::find($id);
+        if ($account) {
+            $account-> delete();
+            return response()->json(['status'=>200,'message'=>'account deleted']);
+        }
+        else {
+            return response()->json(['status'=>404, 'message'=>'No account id found']);
         }
     }
 }

@@ -7,7 +7,8 @@ import Transcriptions from './pages/Transcriptions';
 import Faq from './pages/Faq';
 import Login from './pages/Login';
 import Register from "./pages/Register";
-// import ScrollToTop from './components.ScrolltoTop';
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:8000/';
 
 function App() {
    return (
@@ -27,7 +28,7 @@ function App() {
                   ></Route>
                   <Route exact path="/faq" element={<Faq />}></Route>
                   <Route exact path="/login" element={<Login />}></Route>
-                  <Route exact path="/registration" element={<Register />} />
+                  <Route exact path="/register" element={<Register />} />
                </Routes>
             </div>
          </div>

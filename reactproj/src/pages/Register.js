@@ -1,30 +1,63 @@
-import React, { useState, useEffect } from "react";
-import Login from "./Login";
-import { Link } from "react-router-dom";
-import mail from "../components/images/email.png";
-import lock from "../components/images/lock.png";
-import profile from "../components/images/icon.jpg";
-import UseForm from "../components/UseForm";
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import mail from '../components/images/email.png';
+import lock from '../components/images/lock.png';
+import profile from '../components/images/icon.jpg';
+import axios from 'axios';
+import swal from 'sweetalert';
 
-function Register({ submitForm }) {
-    const { handleChange, handleFormSubmit, values, errors } = UseForm(
-        submitForm
-    );
-    // const LOCAL_STORAGE_KEY = "Info";
+function Register() {
+    const history = useNavigate();
 
-    const [Info, setInfo] = useState({
-        name: "",
-        email: "",
-        password: "",
-
+    const [userInfo, setUser] = useState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+        error_list: [],
     });
+
+
     const navLinks = {
-        width: "50%",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        listStyle: "none"
+        width: '50%',
+        display: 'flex',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        listStyle: 'none',
     };
+
+    const handleInput = (e) => {
+        e.persist();
+        setUser({ ...userInfo, [e.target.name]: e.target.value });
+    };
+
+    const saveUser = (e) => {
+        e.preventDefault();
+        const data = {
+            firstName: userInfo.firstName,
+            lastName: userInfo.lastName,
+            email: userInfo.email,
+            password: userInfo.password,
+
+        };
+
+        axios.post(`api/register`, data).then((res) => {
+            if (res.data.status === 200) {
+                swal('Success', res.data.message, 'Success');
+                setUser({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    password: '',
+                    error_list: [],
+                });
+
+                history.push('/register');
+            } else if (res.data.status === 422) {
+                setUser({ ...userInfo, error_list: res.data.validate_err });
+            }
+        });
+    }
 
     const error = {
         color: "red",
@@ -151,46 +184,41 @@ function Register({ submitForm }) {
     };
 
 
-    // useEffect(() => {
-    //     const retriveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    //     if (retriveContacts) setInfo(retriveContacts);
-    // }, []);
 
-    // useEffect(() => {
-    //     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(Info));
-    // }, [Info]);
-
-    let register = (e) => {
-        e.preventDefault();
-
-        if (!Info.name || !Info.email || !Info.password || !Info.profession) {
-            alert("Complete all the fields!!!");
-            return;
-        }
-    };
 
     return (
         <div style={content}>
-            <form onSubmit={register} style={main2}>
+            <form onSubmit={saveUser} method="POST" style={main2}>
                 <div style={main}>
                     <div style={subMain}>
                         <div>
                             <div style={rHeader}>
                                 <h1>Registration</h1>
                                 <div>
-                                    <img src={profile} alt="name" style={emailIcon} />
+                                    <img src={profile} alt="firstName" style={emailIcon} />
                                     <input
                                         type="text"
-                                        name="fullName"
-                                        placeholder="Enter Name"
+                                        name="firstName"
+                                        placeholder="First Name"
                                         required
                                         style={fill}
-                                        // value={Info.name}
-                                        value={values.fullName}
-                                        onChange={handleChange}
-                                    // onChange={(e) => setInfo({ ...Info, name: e.target.value })}
+                                        value={userInfo.firstName}
+                                        onChange={handleInput}
                                     />
-                                    {errors.fullName && <p style={error}>{errors.fullName}</p>}
+
+                                </div>
+                                <div>
+                                    <img src={profile} alt="Last Name" style={emailIcon} />
+                                    <input
+                                        type="text"
+                                        name="lastName"
+                                        placeholder="Last Name"
+                                        required
+                                        style={fill}
+                                        value={userInfo.lastName}
+                                        onChange={handleInput}
+                                    />
+
                                 </div>
                                 <div style={mailId}>
                                     <img src={mail} alt="email" style={emailIcon} />
@@ -200,12 +228,10 @@ function Register({ submitForm }) {
                                         placeholder="Enter Email-id"
                                         require
                                         style={fill}
-                                        // value={Info.email}
-                                        value={values.email}
-                                        onChange={handleChange}
-                                    // onChange={(e) => setInfo({ ...Info, email: e.target.value })}
+                                        value={userInfo.email}
+                                        onChange={handleInput}
                                     />
-                                    {errors.email && <p style={error}>{errors.email}</p>}
+
                                 </div>
                                 <div style={mailId}>
                                     <img src={lock} alt="email" style={emailIcon} />
@@ -215,20 +241,14 @@ function Register({ submitForm }) {
                                         placeholder="Enter New Password"
                                         style={fill}
                                         required
-                                        value={values.password}
-                                        onChange={handleChange}
-                                    // value={Info.password}
-                                    // onChange={(e) =>
-                                    //   setInfo({ ...Info, password: e.target.value })
-                                    // }
+                                        value={userInfo.password}
+                                        onChange={handleInput}
                                     />
-                                    {errors.password && <p style={error}>{errors.password}</p>}
+
                                 </div>
 
                                 <div style={loginBtn}>
-                                    <Link to="/services">
-                                        <button type="submit">Register</button>
-                                    </Link>
+                                    <button type="submit">Register</button>
                                 </div>
                                 <div style={regLink}>
                                     <p>If Account exist then</p>

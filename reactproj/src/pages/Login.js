@@ -187,11 +187,11 @@ function Login({ submitForm }) {
                         <div style={loginBtn}>
                            <Link to="/services">
                               <button type="button">Login</button>
-                              {/* style={loginBtn} */}
+                    
                            </Link>
                         </div>
                         <div style={regLink}>
-                           <Link style={link} to="/registration">
+                           <Link style={link} to="/register">
                               <li>Register Now</li>
                            </Link>
                         </div>

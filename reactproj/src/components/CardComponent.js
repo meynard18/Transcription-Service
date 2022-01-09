@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { styled } from '@mui/material/styles';
 import icon from './images/icon3.png';
+import { StyledCard } from './Card.styled';
 
 const cardContents = [
    {
@@ -31,7 +32,7 @@ const cardContents = [
    },
 ];
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
    imageContainer: {
       height: '140px',
    },
@@ -49,16 +50,28 @@ const useStyles = makeStyles(() => ({
       justifyContent: 'center',
       alignItems: 'center',
    },
+
+   servicePage: {
+      [theme.breakpoints.down('md')]: {
+          marginBottom: '2rem',
+      },
+   },
 }));
 
 function CardComponent() {
    const classes = useStyles();
 
    return (
-      <Grid container direction="row" justifyContent="center" spacing={8}>
+      <Grid
+         container
+         direction="row"
+         justifyContent="center"
+         spacing={8}
+         className={classes.servicePage}
+      >
          {cardContents.map((item) => (
             <Grid item xs={7} md={3}>
-               <Card sx={{ maxWidth: 250 }} className={classes.card}>
+               <StyledCard sx={{ maxWidth: 250 }}>
                   <div className={classes.imageContainer}>
                      <CardMedia
                         component="img"
@@ -85,7 +98,7 @@ function CardComponent() {
                         {item.cardDescription}
                      </Typography>
                   </CardContent>
-               </Card>
+               </StyledCard>
             </Grid>
          ))}
       </Grid>

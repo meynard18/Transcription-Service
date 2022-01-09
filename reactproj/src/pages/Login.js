@@ -74,9 +74,11 @@ function Login({ submitForm }) {
    const containerImage = {
       borderRadius: "150px",
       alignItems: "center",
+      justifyContent: "center",
       display: "flex",
       height: "115px",
-      width: "115px"
+      width: "115px",
+      marginBottom: "20px"
    };
 
    const profileIcon = {
@@ -185,9 +187,9 @@ function Login({ submitForm }) {
                         </div>
 
                         <div style={loginBtn}>
-                           <Link to="/services">
+                           <Link to="/transcription">
                               <button type="button">Login</button>
-                    
+
                            </Link>
                         </div>
                         <div style={regLink}>

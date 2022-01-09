@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Typography, Grid, Box} from '@material-ui/core';
+import { makeStyles, Typography, Grid, Box } from '@material-ui/core';
 import bg2 from '../components/images/bg2.png';
 import PageTitle from '../components/PageTitle';
 
@@ -8,7 +8,6 @@ const useStyles = makeStyles((theme) => ({
       backgroundImage: `url(${bg2})`,
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
-      marginTop: '-1.2rem',
       minHeight: '100vh',
    },
 
@@ -21,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
          marginLeft: '5rem',
       },
       [theme.breakpoints.down('sm')]: {
+         margin: 'auto',
          textAlign: 'center',
       },
    },
@@ -64,20 +64,20 @@ const useStyles = makeStyles((theme) => ({
       marginLeft: '-8.5rem',
       color: '#440a67',
       [theme.breakpoints.down('sm')]: {
-         display: 'none'
+         display: 'none',
       },
-
-      
    },
 }));
 
 function AboutUs() {
    const classes = useStyles();
    return (
-      <div id="aboutUs" className={classes.aboutUsBg}>
-         <Typography variant="h1" component="h1" className={classes.header}>
-            About Us
-         </Typography>
+      <Grid id="aboutUs" className={classes.aboutUsBg}>
+         <Grid>
+            <Typography variant="h1" component="h1" className={classes.header}>
+                  About Us
+            </Typography>
+         </Grid>
 
          <Box sx={{ flexGrow: 1 }}>
             <Grid container spacing={2}>
@@ -108,7 +108,7 @@ function AboutUs() {
                </Grid>
             </Grid>
          </Box>
-      </div>
+      </Grid>
    );
 }
 

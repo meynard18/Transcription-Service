@@ -40,7 +40,11 @@ function Home() {
          <div id="home">
             <Grid className={classes.hero}>
                <Grid xs={12}>
-                  <Typography className={classes.header}>
+                  <Typography
+                     variant="h1"
+                     component="h1"
+                     className={classes.header}
+                  >
                      <PageTitle title="Your #1 Music Transcription Service Online" />
                   </Typography>
                </Grid>

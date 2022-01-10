@@ -1,0 +1,17 @@
+.Footer {
+  background-color: #440a67;
+}
+.container h6 {
+  color: #ffe3fe;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  justify-content: center;
+  align-items: center;
+}
+.grid-container a {
+  text-decoration: none;
+}

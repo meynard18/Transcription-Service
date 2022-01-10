@@ -34,6 +34,16 @@ class AccountController extends Controller
         }
     }
 
+    public function edit ($id) {
+        $account = Account::find($id);
+        if ($account) {
+            return response()->json(['status'=>200, "account"=>$account]);
+        }
+        else {
+            return response()->json(['status'=>404, 'message'=>'No account id found']);
+        } 
+    }
+
     public function delete ($id) {
         $account = Account::find($id);
         if ($account) {

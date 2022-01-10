@@ -17,28 +17,18 @@ function Register() {
       error_list: [],
    });
 
-
-   const navLinks = {
-      width: '50%',
-      display: 'flex',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      listStyle: 'none',
-   };
-
    const handleInput = (e) => {
       e.persist();
       setUser({ ...userInfo, [e.target.name]: e.target.value });
    };
- 
+
    const saveUser = (e) => {
       e.preventDefault();
       const data = {
          firstName: userInfo.firstName,
-         lastName: userInfo. lastName,
+         lastName: userInfo.lastName,
          email: userInfo.email,
-         password:  userInfo.password,
-
+         password: userInfo.password,
       };
 
       axios.post(`api/register`, data).then((res) => {
@@ -51,13 +41,21 @@ function Register() {
                password: '',
                error_list: [],
             });
-    
+
             history.push('/register');
          } else if (res.data.status === 422) {
             setUser({ ...userInfo, error_list: res.data.validate_err });
          }
       });
-   }
+   };
+
+   const navLinks = {
+      width: '50%',
+      display: 'flex',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      listStyle: 'none',
+   };
 
    const error = {
       color: 'red',
@@ -179,8 +177,6 @@ function Register() {
       justifyContent: 'center',
    };
 
- 
-
    return (
       <div style={content}>
          <form onSubmit={saveUser} method="POST" style={main2}>
@@ -190,7 +186,11 @@ function Register() {
                      <div style={rHeader}>
                         <h1>Registration</h1>
                         <div>
-                           <img src={profile} alt="firstName" style={emailIcon} />
+                           <img
+                              src={profile}
+                              alt="firstName"
+                              style={emailIcon}
+                           />
                            <input
                               type="text"
                               name="firstName"
@@ -200,10 +200,13 @@ function Register() {
                               value={userInfo.firstName}
                               onChange={handleInput}
                            />
-                           
                         </div>
                         <div>
-                           <img src={profile} alt="Last Name" style={emailIcon} />
+                           <img
+                              src={profile}
+                              alt="Last Name"
+                              style={emailIcon}
+                           />
                            <input
                               type="text"
                               name="lastName"
@@ -213,7 +216,6 @@ function Register() {
                               value={userInfo.lastName}
                               onChange={handleInput}
                            />
-                          
                         </div>
                         <div style={mailId}>
                            <img src={mail} alt="email" style={emailIcon} />
@@ -226,7 +228,6 @@ function Register() {
                               value={userInfo.email}
                               onChange={handleInput}
                            />
-                          
                         </div>
                         <div style={mailId}>
                            <img src={lock} alt="email" style={emailIcon} />
@@ -239,7 +240,6 @@ function Register() {
                               value={userInfo.password}
                               onChange={handleInput}
                            />
-                           
                         </div>
 
                         <div style={loginBtn}>

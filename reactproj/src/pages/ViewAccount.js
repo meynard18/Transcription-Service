@@ -53,8 +53,8 @@ function Account() {
                <TableCell align="center">{item.lastName}</TableCell>
                <TableCell align="center">{item.email}</TableCell>
                <TableCell align="center">
-                  <Link to={'/editAccount'}>
-                     <Button variant="contained">Edit</Button>
+                  <Link to={`/editAccount/${item.id}`}><Button variant="contained" >edit</Button>
+                    
                   </Link>
                </TableCell>
                <TableCell align="center">

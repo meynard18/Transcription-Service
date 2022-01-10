@@ -32,7 +32,7 @@ function App() {
                   <Route exact path="/login" element={<Login />}></Route>
                   <Route exact path="/register" element={<Register />} />
                   <Route exact path="/account" element={<ViewAccount />} />
-                  <Route exact path="/editAccount" element={<EditAccount />} />
+                  <Route exact path="/editAccount/:id" element={<EditAccount />} />
                </Routes>
             </div>
          </div>

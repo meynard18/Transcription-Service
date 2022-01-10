@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import ViewAccount from './pages/ViewAccount';
 import EditAccount from './pages/EditAccount';
+import AddTranscription from './pages/AddTranscription';
 import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8000/';
 
@@ -33,6 +34,8 @@ function App() {
                   <Route exact path="/register" element={<Register />} />
                   <Route exact path="/account" element={<ViewAccount />} />
                   <Route exact path="/editAccount/:id" element={<EditAccount />} />
+                  <Route exact path="/addProduct" element={<AddTranscription />} />
+                  
                </Routes>
             </div>
          </div>

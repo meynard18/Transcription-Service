@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Register from "./Register";
+import "../components/styles/ScrollBar.css";
 import { Link } from "react-router-dom";
 import email from "../components/images/email.png";
 import lock from "../components/images/lock.png";
@@ -12,18 +12,20 @@ function Login({ submitForm }) {
    const { handleChange, handleFormSubmit, values, errors } = UseForm(
       submitForm
    );
-   const navLinks = {
-      width: "50%",
-      display: "flex",
-      justifyContent: "space-around",
-      alignItems: "center",
-      listStyle: "none"
-   };
+
+   // const navLinks = {
+   //    width: "50%",
+   //    display: "flex",
+   //    justifyContent: "space-around",
+   //    alignItems: "center",
+   //    listStyle: "none"
+   // };
 
    const error = {
       color: "red",
       fontSize: "15px",
-      fontWeight: "bold"
+      fontWeight: "bold",
+      margin: "0"
    };
 
    const link = {
@@ -37,7 +39,8 @@ function Login({ submitForm }) {
       justifyContent: "center",
 
       display: "flex",
-      padding: "40px 10px 40px 10px"
+      padding: "40px 10px 40px 10px",
+
    };
    const main2 = {
       textAlign: "center",
@@ -47,23 +50,25 @@ function Login({ submitForm }) {
       display: "flex",
       padding: "40px 10px 40px 10px",
       backgroundColor: "#440a67",
-      marginTop: "5%",
-      width: "50%"
+      // marginTop: "5%",
+      width: "50%",
+
    };
 
    const subMain = {
       display: "flex",
       justifyContent: "center",
-      height: "50vh",
+      // height: "50vh",
+      maxHeight: "5%",
       backgroundColor: "#440a67"
    };
 
-   const input = {
-      width: "300px",
-      height: "50px",
-      borderRadius: "60px",
-      backgroundColor: "#ffe3fe"
-   };
+   // const input = {
+   //    width: "300px",
+   //    height: "50px",
+   //    borderRadius: "60px",
+   //    backgroundColor: "#ffe3fe"
+   // };
 
    const imgs = {
       paddingTop: "20px",
@@ -101,23 +106,13 @@ function Login({ submitForm }) {
    };
    const fill = {
       paddingLeft: "70px",
-      fontSize: "20px"
+      fontSize: "20px",
+
    };
 
    const secondInput = {
       paddingTop: "20px"
    };
-
-   const button = {
-      width: "260px",
-      height: "50px",
-      borderRadius: "60px",
-      backgroundColor: "#93329e",
-      color: "#ffe3fe",
-      fontSize: "25px",
-      border: "none"
-   };
-
 
    const loginBtn = {
       paddingTop: "20px"
@@ -127,22 +122,13 @@ function Login({ submitForm }) {
       paddingTop: "10px"
    }
 
-   const mailId = {
-      paddingTop: "20px"
-   };
-
-   const pList = {
-      paddingRight: "10px",
-      fontSize: "25px"
-   };
-   const rHeader = {
-      color: "#ffe3fe"
-   };
 
    const content = {
       textAlign: "center",
       display: "flex",
       justifyContent: "center",
+      alignItems: "center",
+
       // height: "100%"
    };
 
@@ -160,6 +146,11 @@ function Login({ submitForm }) {
                      </div>
                      <div>
                         <h1 style={lHeader}>Login</h1>
+                        <div style={regLink}>
+                           <Link style={link} to="/register">
+                              <li>Register Now</li>
+                           </Link>
+                        </div>
                         <div>
                            <img src={email} alt="email" style={emailIcon} />
                            <input
@@ -168,8 +159,10 @@ function Login({ submitForm }) {
                               // className="fill"
                               style={fill}
                               name="email"
+                              required
                               value={values.email}
                               onChange={handleChange}
+                           // onClick={handleFormSubmit}
                            />
                            {errors.email && <p style={error}>{errors.email}</p>}
                         </div>
@@ -180,23 +173,27 @@ function Login({ submitForm }) {
                               placeholder="Enter Password"
                               style={fill}
                               name="password"
+                              required
                               value={values.password}
                               onChange={handleChange}
+
                            />
                            {errors.password && <p style={error}>{errors.password}</p>}
                         </div>
 
                         <div style={loginBtn}>
                            <Link to="/transcription">
-                              <button type="button">Login</button>
+                              <button type="button" onClick={handleFormSubmit}>Login</button>
 
                            </Link>
                         </div>
+
                         <div style={regLink}>
                            <Link style={link} to="/register">
                               <li>Register Now</li>
                            </Link>
                         </div>
+
                      </div>
                   </div>
                </div>

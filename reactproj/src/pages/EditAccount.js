@@ -31,28 +31,32 @@ const EditAccount = () => {
       });
    }, [navigate, id]);
 
-   // const updateAccount = (e) => {
-   //    e.preventDefault();
-   //    // any changes to input
-   //    const data = {
-   //       firstName: userInfo.firstName,
-   //       lastName: userInfo.lastName,
-   //       email: userInfo.email,
-   //    };
-   //    // any changes will be passed to axious
-   //    axios.put(`api/updateAccount/${id}`, data).then((res) => {
-   //       if (res.data.status === 200) {
-   //          swal('Success', res.data.message);
-   //          setError([]);
-   //       } else if (res.data.status === 404) {
-   //          swal('Error', res.data.message, 'Error');
-   //          navigate('/');
-   //       } else if (res.data.status === 422) {
-   //          swal('All fields are mandatory', '');
-   //          setError(res.data.validationError);
-   //       }
-   //    });
-   // };
+   const updateAccount = (e) => {
+      e.preventDefault();
+      // any changes to input
+      const data = {
+         firstName: userInfo.firstName,
+         lastName: userInfo.lastName,
+         email: userInfo.email,
+         password: userInfo.password,
+      };
+      // any changes will be passed to axious
+      axios.put(`api/updateAccount/${id}`, data).then((res) => {
+         if (res.data.status === 200) {
+            swal('Success', res.data.message);
+            setError([]);
+         } else if (res.data.status === 404) {
+            swal('Error', res.data.message, 'Error');
+            navigate('/');
+         } else if (res.data.status === 422) {
+            swal('All fields are mandatory', '');
+            setError(res.data.validationError);
+         }
+      });
+   };
+   if (loading) {
+      return <h4>Loading Edit Account Table</h4>;
+   }
 
    const navLinks = {
       width: '50%',
@@ -184,7 +188,7 @@ const EditAccount = () => {
 
    return (
       <div style={content}>
-         <form  style={main2}>
+         <form onSubmit={updateAccount} style={main2}>
             <div style={main}>
                <div style={subMain}>
                   <div>
@@ -204,6 +208,7 @@ const EditAccount = () => {
                               style={fill}
                               value={userInfo.firstName}
                               onChange={handleInput}
+                              readOnly
                            />
                         </div>
                         <div>
@@ -220,6 +225,7 @@ const EditAccount = () => {
                               style={fill}
                               value={userInfo.lastName}
                               onChange={handleInput}
+                              readOnly
                            />
                         </div>
                         <div style={mailId}>
@@ -232,6 +238,7 @@ const EditAccount = () => {
                               style={fill}
                               value={userInfo.email}
                               onChange={handleInput}
+                          
                            />
                         </div>
                         <div style={mailId}>

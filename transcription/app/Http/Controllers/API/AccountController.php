@@ -44,6 +44,35 @@ class AccountController extends Controller
         } 
     }
 
+    public function update (Request $request, $id ) {
+        $validator = Validator::make($request->all(),[
+            "firstName"=>"required", 
+            "lastName"=>"required", 
+            "email"=>"required",
+            "password"=>"required",
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>422, "validationError"=>$validator->errors()]);
+        }
+        else {
+            $account = Account:: find($id); //same to SELECT * FROM table Where id is
+            if ($account) {
+                $account->firstName = $request->input('firstName');
+                $account->lastName = $request->input('lastName');
+                $account->email = $request->input('email');
+                $account->password = $request->input('password');
+                $account->update();
+                return response()->json(['status'=>200,  'message'=>'account updated succesfully']);
+            }
+            else {
+                return response()->json(['status'=>404, 'message'=>'No account id found']);
+            }
+        }
+    }
+
+
+
+
     public function delete ($id) {
         $account = Account::find($id);
         if ($account) {

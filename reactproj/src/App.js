@@ -3,13 +3,13 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Transcriptions from './pages/Transcriptions';
-// import Login from './pages/Login';
 import Faq from './pages/Faq';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import ViewAccount from './pages/ViewAccount';
 import EditAccount from './pages/EditAccount';
 import AddTranscription from './pages/AddTranscription';
+import EditProduct from './pages/EditProduct';
 import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8000/';
 
@@ -22,8 +22,6 @@ function App() {
             <div className="content">
                <Routes>
                   <Route exact path="/E-com-groupproj" element={<Home />} />
-
-                  {/* <Route path="/signup" element={<SignUp />}></Route> */}
                   <Route
                      exact
                      path="/transcription"
@@ -33,9 +31,21 @@ function App() {
                   <Route exact path="/login" element={<Login />}></Route>
                   <Route exact path="/register" element={<Register />} />
                   <Route exact path="/account" element={<ViewAccount />} />
-                  <Route exact path="/editAccount/:id" element={<EditAccount />} />
-                  <Route exact path="/addProduct" element={<AddTranscription />} />
-                  
+                  <Route
+                     exact
+                     path="/editAccount/:id"
+                     element={<EditAccount />}
+                  />
+                  <Route
+                     exact
+                     path="/addProduct"
+                     element={<AddTranscription />}
+                  />
+                  <Route
+                     exact
+                     path="/transcription/editProduct/:id"
+                     element={<EditProduct />}
+                  />
                </Routes>
             </div>
          </div>

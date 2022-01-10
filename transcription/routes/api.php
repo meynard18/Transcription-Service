@@ -14,8 +14,11 @@ Route::delete('/deleteAccount/{id}', [AccountController::class, 'delete']);
 
 
 // PRODUCT ROUTE //
+Route::get('/editProduct/{id}', [ProductController::class, 'edit']);
+Route::put('/updateProduct/{id}', [ProductController::class, 'update']);
 Route::get('products', [ProductController::class, 'index']);
 Route::post('/addProduct', [ProductController::class, 'create']);
+Route::delete('/deleteproduct/{id}', [ProductController::class, 'delete']);
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

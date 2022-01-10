@@ -17,6 +17,22 @@ function Transcriptions() {
       });
    }, []);
 
+   const deleteProduct = (e, id) => {
+      e.preventDefault();
+      const delClick = e.currentTarget;
+      delClick.innertext = 'Deleting';
+
+      axios.delete(`api/deleteproduct/${id}`).then((res) => {
+         if (res.data.status === 200) {
+            swal('Deleted!', res.data.message, 'success');
+            delClick.closest('tr').remove();
+         } else if (res.data.status === 404) {
+            swal('Error', res.data.message, 'error');
+            delClick.innerText = 'Delete';
+         }
+      });
+   };
+
    if (loading) {
       return <h4>Loading Product Data</h4>;
    } else {
@@ -41,7 +57,7 @@ function Transcriptions() {
                   <button
                      type="button"
                      className="btn btn-danger btn-sm"
-                     
+                     onClick={(e) => deleteProduct(e, item.id)}
                   >
                      DELETE
                   </button>
@@ -97,7 +113,7 @@ function Transcriptions() {
                   </tr>
                </thead>
                <tbody>
-                  { product_HTMLTABLE}
+                  {product_HTMLTABLE}
                   {/* <tr className="text-center">
                      <td>1</td>
                      <td>Forevermore</td>

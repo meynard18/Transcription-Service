@@ -51,20 +51,6 @@ function Register() {
         });
     }
 
-    const navLinks = {
-        width: "50%",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        listStyle: "none"
-    };
-
-    const error = {
-        color: "red",
-        fontSize: "15px",
-        fontWeight: "bold"
-    };
-
     const link = {
         listStyle: "none",
         textDecoration: "none",
@@ -97,37 +83,6 @@ function Register() {
         backgroundColor: "#440a67"
     };
 
-    const input = {
-        width: "300px",
-        height: "50px",
-        borderRadius: "60px",
-        backgroundColor: "#ffe3fe"
-    };
-
-    const imgs = {
-        paddingTop: "20px",
-        justifyContent: "center",
-        display: "flex"
-    };
-
-    const containerImage = {
-        borderRadius: "150px",
-        alignItems: "center",
-        display: "flex",
-        height: "115px",
-        width: "115px"
-    };
-
-    const profileIcon = {
-        height: "130px",
-        width: "130",
-        borderRadius: "130px"
-    };
-
-    const lHeader = {
-        textAlign: "center",
-        color: "#ffe3f3"
-    };
     const emailIcon = {
         height: "25px",
         width: "35px",
@@ -141,21 +96,6 @@ function Register() {
         fontSize: "20px"
     };
 
-    const secondInput = {
-        paddingTop: "20px"
-    };
-
-    const button = {
-        width: "260px",
-        height: "50px",
-        borderRadius: "60px",
-        backgroundColor: "#93329e",
-        color: "#ffe3fe",
-        fontSize: "25px",
-        border: "none"
-    };
-
-
     const loginBtn = {
         paddingTop: "20px"
     }
@@ -168,10 +108,7 @@ function Register() {
         paddingTop: "20px"
     };
 
-    const pList = {
-        paddingRight: "10px",
-        fontSize: "25px"
-    };
+
     const rHeader = {
         color: "#ffe3fe"
     };

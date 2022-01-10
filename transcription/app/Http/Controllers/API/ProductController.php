@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function index () {
+        $product = Product::all();
+        return response()->json(['status'=>200, "products"=>$product]);
+    }
     public function create (Request $request) {
         $validator = Validator::make($request->all(),[
             "title"=>"required", 

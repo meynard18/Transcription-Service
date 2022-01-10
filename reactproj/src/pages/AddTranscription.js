@@ -21,21 +21,21 @@ function AddProduct() {
    const saveProduct = (e) => {
       e.preventDefault();
       const data = {
-        title: productInput.title,
-        artist: productInput.artist,
-        category: productInput.category,
-        price: productInput.price,
+         title: productInput.title,
+         artist: productInput.artist,
+         category: productInput.category,
+         price: productInput.price,
       };
 
       axios.post(`api/addProduct`, data).then((res) => {
          if (res.data.status === 200) {
             swal('Success', res.data.message, 'Success');
             setProduct({
-                title: '',
-                artist: '',
-                category: '',
-                price: 0.0,
-                error_list: [],
+               title: '',
+               artist: '',
+               category: '',
+               price: 0.0,
+               error_list: [],
             });
             history.push('/addProducts');
          } else if (res.data.status === 422) {
@@ -49,8 +49,8 @@ function AddProduct() {
             <div className="card">
                <div class="card-header">
                   <h4>Add Product</h4>
-                  <Link to={'/'} className="btn btn-sm float-end">
-                     Back
+                  <Link to={'/transcription'} className="btn btn-sm float-end">
+                     Transcription
                   </Link>
                </div>
                <div class="card-body">
@@ -109,7 +109,7 @@ function AddProduct() {
                      </div>
 
                      <button type="submit" className="btn btn-primary">
-                        Submit
+                        Save
                      </button>
                   </form>
                </div>

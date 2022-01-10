@@ -6,7 +6,9 @@ import Transcriptions from './pages/Transcriptions';
 // import Login from './pages/Login';
 import Faq from './pages/Faq';
 import Login from './pages/Login';
-import Register from "./pages/Register";
+import Register from './pages/Register';
+import ViewAccount from './pages/ViewAccount';
+import EditAccount from './pages/EditAccount';
 import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8000/';
 
@@ -29,6 +31,8 @@ function App() {
                   <Route exact path="/faq" element={<Faq />}></Route>
                   <Route exact path="/login" element={<Login />}></Route>
                   <Route exact path="/register" element={<Register />} />
+                  <Route exact path="/account" element={<ViewAccount />} />
+                  <Route exact path="/editAccount/:id" element={<EditAccount />} />
                </Routes>
             </div>
          </div>

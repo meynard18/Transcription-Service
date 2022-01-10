@@ -120,6 +120,13 @@ function Navbar() {
                   >
                      Contact Us
                   </Link>
+                  <NavLink
+                     className="nav-link"
+                     to="/account"
+                     className={classes.link}
+                  >
+                     Account
+                  </NavLink>
                </div>
             )}
          </Toolbar>

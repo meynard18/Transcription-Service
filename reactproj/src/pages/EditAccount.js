@@ -1,53 +1,62 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import swal from 'sweetalert';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import mail from '../components/images/email.png';
 import lock from '../components/images/lock.png';
 import profile from '../components/images/icon.jpg';
-import axios from 'axios';
-import swal from 'sweetalert';
 
-function Register() {
-   const history = useNavigate();
-
-   const [userInfo, setUser] = useState({
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      error_list: [],
-   });
+const EditAccount = () => {
+   const navigate = useNavigate();
+   const [userInfo, setUser] = useState([]);
+   const [loading, setLoading] = useState(true);
+   const [errorInput, setError] = useState([]);
+   const { id } = useParams();
 
    const handleInput = (e) => {
       e.persist();
       setUser({ ...userInfo, [e.target.name]: e.target.value });
    };
 
-   const saveUser = (e) => {
+   useEffect(() => {
+      const account_id = id;
+      axios.get(`api/editAccount/${account_id}`).then((res) => {
+         if (res.data.status === 200) {
+            setUser(res.data.account);
+            setLoading(false);
+         } else if (res.data.status === 404) {
+            swal('Error', res.data.message, 'Error');
+            navigate('/account');
+         }
+      });
+   }, [navigate, id]);
+
+   const updateAccount = (e) => {
       e.preventDefault();
+      // any changes to input
       const data = {
          firstName: userInfo.firstName,
          lastName: userInfo.lastName,
          email: userInfo.email,
          password: userInfo.password,
       };
-
-      axios.post(`api/register`, data).then((res) => {
+      // any changes will be passed to axious
+      axios.put(`api/updateAccount/${id}`, data).then((res) => {
          if (res.data.status === 200) {
-            swal('Success', res.data.message, 'Success');
-            setUser({
-               firstName: '',
-               lastName: '',
-               email: '',
-               password: '',
-               error_list: [],
-            });
-
-            history.push('/register');
+            swal('Success', res.data.message);
+            setError([]);
+         } else if (res.data.status === 404) {
+            swal('Error', res.data.message, 'Error');
+            navigate('/');
          } else if (res.data.status === 422) {
-            setUser({ ...userInfo, error_list: res.data.validate_err });
+            swal('All fields are mandatory', '');
+            setError(res.data.validationError);
          }
       });
    };
+   if (loading) {
+      return <h4>Loading Edit Account Table</h4>;
+   }
 
    const navLinks = {
       width: '50%',
@@ -179,12 +188,12 @@ function Register() {
 
    return (
       <div style={content}>
-         <form onSubmit={saveUser} method="POST" style={main2}>
+         <form onSubmit={updateAccount} style={main2}>
             <div style={main}>
                <div style={subMain}>
                   <div>
                      <div style={rHeader}>
-                        <h1>Registration</h1>
+                        <h1>Edit Account</h1>
                         <div>
                            <img
                               src={profile}
@@ -194,11 +203,12 @@ function Register() {
                            <input
                               type="text"
                               name="firstName"
-                              placeholder="First Name"
+                              // placeholder="First Name"
                               required
                               style={fill}
                               value={userInfo.firstName}
                               onChange={handleInput}
+                              readOnly
                            />
                         </div>
                         <div>
@@ -210,11 +220,12 @@ function Register() {
                            <input
                               type="text"
                               name="lastName"
-                              placeholder="Last Name"
+                              // placeholder="Last Name"
                               required
                               style={fill}
                               value={userInfo.lastName}
                               onChange={handleInput}
+                              readOnly
                            />
                         </div>
                         <div style={mailId}>
@@ -222,11 +233,12 @@ function Register() {
                            <input
                               type="email"
                               name="email"
-                              placeholder="Enter Email-id"
+                              // placeholder="Enter Email-id"
                               require
                               style={fill}
                               value={userInfo.email}
                               onChange={handleInput}
+                          
                            />
                         </div>
                         <div style={mailId}>
@@ -234,7 +246,7 @@ function Register() {
                            <input
                               type="password"
                               name="password"
-                              placeholder="Enter New Password"
+                              // placeholder="Enter New Password"
                               style={fill}
                               required
                               value={userInfo.password}
@@ -243,7 +255,7 @@ function Register() {
                         </div>
 
                         <div style={loginBtn}>
-                           <button type="submit">Register</button>
+                           <button type="submit">Update</button>
                         </div>
                         <div style={regLink}>
                            <p>If Account exist then</p>
@@ -258,6 +270,6 @@ function Register() {
          </form>
       </div>
    );
-}
+};
 
-export default Register;
+export default EditAccount;

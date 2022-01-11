@@ -10,6 +10,8 @@ import ViewAccount from './pages/ViewAccount';
 import EditAccount from './pages/EditAccount';
 import AddTranscription from './pages/AddTranscription';
 import EditProduct from './pages/EditProduct';
+import ContactUs from './pages/ContactUs';
+import AboutUs from './pages/AboutUs'
 import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8000/';
 
@@ -31,6 +33,8 @@ function App() {
                   <Route exact path="/login" element={<Login />}></Route>
                   <Route exact path="/register" element={<Register />} />
                   <Route exact path="/account" element={<ViewAccount />} />
+                  <Route exact path="/contactUs" element={<ContactUs />} />
+                  <Route exact path="/aboutUs" element={<AboutUs/>}/>
                   <Route
                      exact
                      path="/editAccount/:id"

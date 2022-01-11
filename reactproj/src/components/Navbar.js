@@ -81,29 +81,15 @@ function Navbar() {
                      Home
                   </NavLink>
 
-                  <Link
-                     to="services"
-                     className={classes.link}
-                     activeClass="active"
-                     spy={true}
-                     smooth={true}
-                     offset={-60}
-                     duration={500}
-                  >
-                     Services
-                  </Link>
 
-                  <Link
-                     to="aboutUs"
+          
+                  <NavLink
+                     className="nav-link"
+                     to="/aboutUs"
                      className={classes.link}
-                     activeClass="active"
-                     spy={true}
-                     smooth={true}
-                     offset={-60}
-                     duration={500}
                   >
                      About Us
-                  </Link>
+                  </NavLink>
                   <NavLink
                      className="nav-link"
                      to="/transcription"
@@ -122,18 +108,15 @@ function Navbar() {
                   >
                      Login
                   </NavLink>
-
-                  <Link
-                     to="contactUs"
+                  <NavLink
+                     className="nav-link"
+                     to="/contactUs"
                      className={classes.link}
-                     activeClass="active"
-                     spy={true}
-                     smooth={true}
-                     offset={-60}
-                     duration={500}
                   >
                      Contact Us
-                  </Link>
+                  </NavLink>
+
+           
                
                
                </div>

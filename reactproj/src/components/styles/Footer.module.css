@@ -1,0 +1,36 @@
+.bgContainer {
+  margin: 0;
+  vertical-align: top;
+  height: 100px;
+}
+
+.Footer {
+  background-color: #440a67;
+}
+
+.container h6 {
+  color: #ffe3fe;
+  text-align: center;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  justify-content: center;
+  align-items: center;
+}
+.gridContainer a {
+  text-decoration: none;
+}
+a {
+  color: #ffe3fe;
+}
+
+.socialIcons i {
+  margin: auto 10px auto 10px;
+  color: #93329e;
+}
+.socialIcons > i:hover {
+  cursor: pointer;
+  color: #ffe3fe;
+}

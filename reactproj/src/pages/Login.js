@@ -1,197 +1,73 @@
 import React, { useState } from "react";
-import Register from "./Register";
 import { Link } from "react-router-dom";
 import email from "../components/images/email.png";
 import lock from "../components/images/lock.png";
-import profile from "../components/images/icon.jpg";
 import UseForm from "../components/UseForm";
+import styles from "../components/styles/Login.module.css";
 
 function Login({ submitForm }) {
-   // const [emaillog, setEmaillog] = useState(" ");
-   // const [passwordlog, setPasswordlog] = useState(" ");
+
    const { handleChange, handleFormSubmit, values, errors } = UseForm(
       submitForm
    );
-   const navLinks = {
-      width: "50%",
-      display: "flex",
-      justifyContent: "space-around",
-      alignItems: "center",
-      listStyle: "none"
-   };
-
-   const error = {
-      color: "red",
-      fontSize: "15px",
-      fontWeight: "bold"
-   };
-
-   const link = {
-      listStyle: "none",
-      textDecoration: "none",
-      color: "white"
-   };
-
-   const main = {
-      textAlign: "center",
-      justifyContent: "center",
-
-      display: "flex",
-      padding: "90px 0 90px 0"
-   };
-   const main2 = {
-      textAlign: "center",
-      justifyContent: "center",
-      alignItems: "center",
-      // height: "100vh",
-      display: "flex",
-      padding: "90px 0 90px 0",
-      backgroundColor: "#440a67"
-   };
-
-   const subMain = {
-      display: "flex",
-      justifyContent: "center",
-      height: "550px",
-      backgroundColor: "#440a67"
-   };
-
-   const input = {
-      width: "300px",
-      height: "50px",
-      borderRadius: "60px",
-      backgroundColor: "#ffe3fe"
-   };
-
-   const imgs = {
-      paddingTop: "20px",
-      justifyContent: "center",
-      display: "flex"
-   };
-
-   const containerImage = {
-      borderRadius: "150px",
-      alignItems: "center",
-      display: "flex",
-      height: "115px",
-      width: "115px"
-   };
-
-   const profileIcon = {
-      height: "130px",
-      width: "130",
-      borderRadius: "130px"
-   };
-
-   const lHeader = {
-      textAlign: "center",
-      color: "#ffe3f3"
-   };
-   const emailIcon = {
-      height: "25px",
-      width: "35px",
-      position: "absolute",
-      padding: "15px 0 0 15px",
-      border: "none",
-      outline: "none"
-   };
-   const fill = {
-      paddingLeft: "70px",
-      fontSize: "20px"
-   };
-
-   const secondInput = {
-      paddingTop: "20px"
-   };
-
-   const button = {
-      width: "260px",
-      height: "50px",
-      borderRadius: "60px",
-      backgroundColor: "#93329e",
-      color: "#ffe3fe",
-      fontSize: "25px",
-      border: "none"
-   };
-
-
-   const loginBtn = {
-      paddingTop: "20px"
-   }
-
-   const regLink = {
-      paddingTop: "10px"
-   }
-
-   const mailId = {
-      paddingTop: "20px"
-   };
-
-   const pList = {
-      paddingRight: "10px",
-      fontSize: "25px"
-   };
-   const rHeader = {
-      color: "#ffe3fe"
-   };
-
-   const content = {
-      textAlign: "center",
-      display: "flex",
-      justifyContent: "center",
-   };
 
    return (
-      <div style={content}>
+      <div className={styles.content}>
          {/* <div }> */}
-         <form style={main2}>
-            <div style={main}>
-               <div style={subMain}>
-                  <div>
-                     <div style={imgs}>
-                        <div style={containerImage}>
+         <form className={styles.main2}>
+            <div className={styles.main}>
+               <div className={styles.subMain}>
+                  <div className={styles.center}>
+                     {/* <div style={imgs}>
+                        <div >
                            <img src={profile} alt="profile" style={profileIcon} />
                         </div>
-                     </div>
+                     </div> */}
                      <div>
-                        <h1 style={lHeader}>Login</h1>
+                        <h1 className={styles.lHeader}>Login</h1>
                         <div>
-                           <img src={email} alt="email" style={emailIcon} />
+                           <img src={email} alt="email" className={styles.emailIcon} />
                            <input
                               type="email"
                               placeholder="Enter Email-id"
                               // className="fill"
-                              style={fill}
+                              className={styles.fill}
                               name="email"
+                              required
                               value={values.email}
                               onChange={handleChange}
+                           // onClick={handleFormSubmit}
                            />
-                           {errors.email && <p style={error}>{errors.email}</p>}
+                           {errors.email && <p className={styles.error}>{errors.email}</p>}
                         </div>
-                        <div style={secondInput}>
-                           <img src={lock} alt="password" style={emailIcon} />
+                        <div className={styles.secondInput}>
+                           <img src={lock} alt="password" className={styles.emailIcon} />
                            <input
                               type="password"
                               placeholder="Enter Password"
-                              style={fill}
+                              className={styles.fill}
                               name="password"
+                              required
                               value={values.password}
                               onChange={handleChange}
+
                            />
-                           {errors.password && <p style={error}>{errors.password}</p>}
+                           {errors.password && <p className={styles.error}>{errors.password}</p>}
                         </div>
 
-                        <div style={loginBtn}>
-                           <Link to="/services">
-                              <button type="button">Login</button>
-                    
+                        <div className={styles.btn}>
+                           <Link to="/transcription">
+                              <button className={styles.loginBtn} type="button" onClick={handleFormSubmit}>Login</button>
+
                            </Link>
                         </div>
-                        <div style={regLink}>
-                           <Link style={link} to="/register">
+
+                        <div className={styles.regLink}>
+                           <Link className={styles.link} to="/register">
                               <li>Register Now</li>
                            </Link>
                         </div>
+
                      </div>
                   </div>
                </div>

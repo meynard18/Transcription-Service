@@ -31,6 +31,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1rem',
       marginLeft: theme.spacing(3),
       backgroundImage: 'linear-gradient(90deg, #d74d63, #d74d63)',
+      cursor: 'pointer',
 
       backgroundSize: '0% 0.2rem',
       backgroundPosition: 'left bottom',

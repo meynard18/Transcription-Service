@@ -1,0 +1,82 @@
+[
+    {
+        "id":1,
+        "title": "Forevermore",
+        "artist":"Juris",
+        "category": "Secular",
+        "price": "P250"
+    },
+
+    {
+        "id":2,
+        "title": "Ikaw Lamang (male key)",
+        "artist":"Princess Sevillena",
+        "category": "Secular",
+        "price": "P250"
+    },
+
+    {
+        "id":3,
+        "title": "Ikaw Na Nga",
+        "artist":"Daryl Ong",
+        "category": "Secular",
+        "price": "P250"
+    },
+
+    {
+        "id":4,
+        "title": "Kami'y Katagpuin",
+        "artist":"Musikatha",
+        "category": "Gospel",
+        "price": "P250"
+    },
+
+
+    {
+        "id":5,
+        "title": "Kaybuti Mo",
+        "artist":"Ptr. Boy Baldomaro",
+        "category": "Gospel",
+        "price": "P250"
+    },
+
+    {
+        "id":6,
+        "title": "Leaves",
+        "artist":"Ben&Ben",
+        "category": "Secular",
+        "price": "P250"
+    },
+
+    {
+        "id":7,
+        "title": "Lupang Hinirang (Philippine National Anthem)",
+        "artist":"Julian Felipe",
+        "category": "Secular",
+        "price": "P250"
+    },
+
+    {
+        "id":8,
+        "title": "Ngayon At Kailanman",
+        "artist":"Jonalyn Viray",
+        "category": "Secular",
+        "price": "P250"
+    },
+
+    {
+        "id":9,
+        "title": "Pangarap Ko Ang Ibigin Ka",
+        "artist":"Regine Velasquez",
+        "category": "Secular",
+        "price": "P250"
+    },
+
+    {
+        "id":10,
+        "title": "Sa Piling Mo",
+        "artist":"Regine Velasquez",
+        "category": "Secular",
+        "price": "P250"
+    }
+]

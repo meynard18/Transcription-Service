@@ -144,19 +144,14 @@ function Transcriptions() {
                      DELETE
                   </button>
                </td>
-<<<<<<< HEAD
                <td>
                   <button>Add Cart</button>
                </td>
             </tr>
-=======
-            </tr>       
->>>>>>> 843cef0 (added search functionality on transcription page)
          );
       });
    }
 
-<<<<<<< HEAD
          <div className="container-sm song-list mt-5">
             <table className="table">
                <thead>
@@ -177,11 +172,6 @@ function Transcriptions() {
          </div>
       </div>
    );
-=======
-   
-
-  
->>>>>>> 843cef0 (added search functionality on transcription page)
 }
 
 export default Transcriptions;

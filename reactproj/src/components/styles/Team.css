@@ -58,3 +58,62 @@ a .btn-secondary {
 a .btn-secondary:hover {
   background-color: #440a67;
 }
+
+/* .backgroundColor {
+  padding-top: 100px;
+  background-color: #440a67;
+} */
+
+/* .textAboutUs {
+  color: #ffe3fe;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.aboutImage img {
+  width: 50%;
+  height: 50%;
+}
+.textDescription {
+  color: #ffe3fe; */
+/* display: flex;
+      justify-content: flex-end;
+      align-items: flex-end; */
+/* }
+.textHeader {
+  color: #ffe3fe;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px; */
+/* margin:5px auto 5px auto; */
+/* }
+.text {
+  color: #ffe3fe;
+}
+.btnSecondary { */
+/* background-color:#FFE3FE; */
+/* text-decoration: none;
+}
+a .btnSecondary {
+  color: #ffe3fe;
+  background-color: #93329e;
+}
+a .btnSecondary:hover {
+  background-color: #440a67;
+}
+.imgSize {
+  width: 250px;
+  height: 250px;
+  border: 100%;
+}
+
+.btnSpacing {
+  margin-top: 10%;
+} */
+
+/* className="rounded-circle z-depth-1 img-fluid" */

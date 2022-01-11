@@ -1,20 +1,18 @@
-// Code starts here 
-
 import React from 'react';
-import "../components/styles/Footer.css";
+import styles from "../components/styles/Footer.module.css";
 import ReactDOM from 'react-dom';
-import { SocialIcon } from 'react-social-icons';
+import { Link } from 'react-scroll';
 
 function Footer() {
     return (
-        <div>
-            <section className="Footer">
-                <div className="container">
-                    <div className="row">
+        <div className={styles.bgContainer}>
+            <section className={styles.Footer}>
+                <div className={styles.container}>
+                    <div className={styles.row}>
                         <div className="col-sm-12">
                             <h6 className=" text-center mb-3 mt-3">Copyright @ Loreal Ipsom Rights Reserved</h6>
 
-                            <div className='grid-container'>
+                            <div className={styles.gridContainer}>
                                 <div className="mb-3 mt-3">
                                     <a href="#">Home</a>
                                 </div>
@@ -43,9 +41,11 @@ function Footer() {
                             </div>
 
                             <div className="text-center mb-3 mt-3">
-                                <SocialIcon url="https://twitter.com/" />
-                                <SocialIcon url="https://facebook.com/" />
-                                <SocialIcon url="https://instagram.com/" />
+                                <div className={styles.socialIcons}>
+                                    <i className="bi bi-facebook" style={{ fontSize: 50 }}></i>
+                                    <i className="bi bi-twitter" style={{ fontSize: 50 }}></i>
+                                    <i className="bi bi-instagram" style={{ fontSize: 50 }}></i>
+                                </div>
                             </div>
 
                         </div>

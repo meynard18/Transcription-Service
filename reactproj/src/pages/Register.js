@@ -5,6 +5,7 @@ import lock from '../components/images/lock.png';
 import profile from '../components/images/icon.jpg';
 import axios from 'axios';
 import swal from 'sweetalert';
+import styles from "../components/styles/Register.module.css";
 
 function Register() {
     const history = useNavigate();
@@ -51,131 +52,62 @@ function Register() {
         });
     }
 
-    const link = {
-        listStyle: "none",
-        textDecoration: "none",
-        color: "white"
-    };
-
-    const main = {
-        textAlign: "center",
-        justifyContent: "center",
-
-        display: "flex",
-        padding: "40px 10px 40px 10px"
-    };
-    const main2 = {
-        textAlign: "center",
-        justifyContent: "center",
-        alignItems: "center",
-        // height: "100vh",
-        display: "flex",
-        padding: "40px 10px 40px 10px",
-        backgroundColor: "#440a67",
-        marginTop: "5%",
-        width: "50%"
-    };
-
-    const subMain = {
-        display: "flex",
-        justifyContent: "center",
-        height: "50vh",
-        backgroundColor: "#440a67"
-    };
-
-    const emailIcon = {
-        height: "25px",
-        width: "35px",
-        position: "absolute",
-        padding: "15px 0 0 15px",
-        border: "none",
-        outline: "none"
-    };
-    const fill = {
-        paddingLeft: "70px",
-        fontSize: "20px"
-    };
-
-    const loginBtn = {
-        paddingTop: "20px"
-    }
-
-    const regLink = {
-        paddingTop: "10px"
-    }
-
-    const mailId = {
-        paddingTop: "20px"
-    };
-
-
-    const rHeader = {
-        color: "#ffe3fe"
-    };
-
-    const content = {
-        textAlign: "center",
-        display: "flex",
-        justifyContent: "center",
-        // height: "100%"
-    };
-
 
 
     return (
-        <div style={content}>
-            <form onSubmit={saveUser} method="POST" style={main2}>
-                <div style={main}>
-                    <div style={subMain}>
+        <div className={styles.content}>
+            <form onSubmit={saveUser} method="POST" className={styles.main2}>
+                <div className={styles.main}>
+                    <div className={styles.subMain}>
                         <div>
-                            <div style={rHeader}>
+                            <div className={styles.rHeader}>
                                 <h1>Registration</h1>
                                 <div>
-                                    <img src={profile} alt="firstName" style={emailIcon} />
+                                    <img src={profile} alt="firstName" className={styles.emailIcon} />
                                     <input
                                         type="text"
                                         name="firstName"
                                         placeholder="First Name"
                                         required
-                                        style={fill}
+                                        className={styles.fill}
                                         value={userInfo.firstName}
                                         onChange={handleInput}
                                     />
 
                                 </div>
                                 <div>
-                                    <img src={profile} alt="Last Name" style={emailIcon} />
+                                    <img src={profile} alt="Last Name" className={styles.emailIcon} />
                                     <input
                                         type="text"
                                         name="lastName"
                                         placeholder="Last Name"
                                         required
-                                        style={fill}
+                                        className={styles.fill}
                                         value={userInfo.lastName}
                                         onChange={handleInput}
                                     />
 
                                 </div>
-                                <div style={mailId}>
-                                    <img src={mail} alt="email" style={emailIcon} />
+                                <div className={styles.mailId}>
+                                    <img src={mail} alt="email" className={styles.emailIcon} />
                                     <input
                                         type="email"
                                         name="email"
                                         placeholder="Enter Email-id"
                                         require
-                                        style={fill}
+                                        className={styles.fill}
                                         value={userInfo.email}
                                         onChange={handleInput}
                                     />
 
                                 </div>
-                                <div style={mailId}>
-                                    <img src={lock} alt="email" style={emailIcon} />
+                                <div className={styles.mailId}>
+                                    <img src={lock} alt="email" className={styles.emailIcon} />
                                     <input
                                         type="password"
                                         name="password"
                                         placeholder="Enter New Password"
-                                        style={fill}
+                                        className={styles.fill}
                                         required
                                         value={userInfo.password}
                                         onChange={handleInput}
@@ -183,13 +115,13 @@ function Register() {
 
                                 </div>
 
-                                <div style={loginBtn}>
-                                    <button type="submit">Register</button>
+                                <div className={styles.btn}>
+                                    <button type="submit" className={styles.loginBtn}>Register</button>
                                 </div>
-                                <div style={regLink}>
+                                <div className={styles.regLink}>
                                     <p>If Account exist then</p>
-                                    <Link style={link} to="/login">
-                                        <li>Login!!!</li>
+                                    <Link to="/login">
+                                        <li className={styles.link} >Login!!!</li>
                                     </Link>
                                 </div>
                             </div>

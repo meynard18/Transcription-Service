@@ -8,8 +8,11 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 
 
+
 class AccountController extends Controller
 {
+ 
+  
     public function index () {
         $account = Account::all();
         return response()->json(['status'=>200, "accounts"=>$account]);
@@ -25,14 +28,29 @@ class AccountController extends Controller
          if ($validator->fails()) {
             return response()->json(['status'=>422, "validate_err"=>$validator->errors()]);
         }
+    
         else {
-            $account = New Account();
-            $account->firstName=$request->input('firstName');
-            $account->lastName=$request->input('lastName');
-            $account->email=$request->input('email');
-            $account->password=Hash::make($request->input('password'));
-            $account->save(); //query builder orm
-            return response()->json(['status'=>200, 'message'=>'Account added Successfully']);
+            $account = Account::create([
+                'firstName'=>$request->firstName,
+                'lastName'=>$request->lastName,
+                'email'=>$request->email,
+                'password'=>Hash::make($request->password),
+            ]);
+            $token = $account->createToken($account->email.'_Token')->plainTextToken;
+            // $account = New Account();
+            // $account->firstName=$request->input('firstName');
+            // $account->lastName=$request->input('lastName');
+            // $account->email=$request->input('email');
+            // $account->password=Hash::make($request->input('password'));
+            // $account->save(); //query builder orm
+
+            // return response()->json(['status'=>200, 'message'=>'Account added Successfully']);
+            return response()->json([
+                'status'=>200,
+                'username'=>$account->firstName,
+                'token'=>$token,
+                'message'=>'registered Successfully',
+            ]);
         }
     }
 
@@ -51,6 +69,13 @@ class AccountController extends Controller
                 return response()->json([
                     'status'=>401,
                     'message'=>'Invalid Credentials',
+                ]);
+            }else {
+                // $token = $account->createToken($account->email.'_Token')->plainTextToken;
+
+                return response()->json([
+                    'status'=>200,
+                    'message'=>'Logged in Successfully',
                 ]);
             }
         }

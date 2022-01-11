@@ -6,6 +6,7 @@ use App\Http\Controllers\API\AccountController;
 use App\Http\Controllers\API\ProductController;
 
 // ACCOUNT ROUTE ///
+Route::post('login', [AccountController::class, 'login']);
 Route::get('account', [AccountController::class, 'index']);
 Route::post('/register', [AccountController::class, 'create']);
 Route::get('/editAccount/{id}', [AccountController::class, 'edit']);

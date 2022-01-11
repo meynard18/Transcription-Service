@@ -1,11 +1,11 @@
 import { makeStyles, Typography, Grid, Button } from '@material-ui/core';
 import React from 'react';
 import Services from '../pages/Services';
-import AboutUs from './AboutUs';
+// import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import music from '../components/images/music.jpg';
 import PageTitle from '../components/PageTitle';
-import Team from './Team';
+// import Team from './Team';
 import Footer from './Footer';
 import ReadBtn from '../components/Btn';
 import { Link } from 'react-scroll';
@@ -64,9 +64,6 @@ function Home() {
             </Grid>
 
             <Services />
-            <AboutUs />
-            <Team />
-            <ContactUs />
             <Footer />
          </div>
       </>

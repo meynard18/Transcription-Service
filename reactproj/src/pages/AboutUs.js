@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles, Typography, Grid, Box } from '@material-ui/core';
 import bg2 from '../components/images/bg2.png';
 import PageTitle from '../components/PageTitle';
+import Team from './Team';
 
 const useStyles = makeStyles((theme) => ({
    aboutUsBg: {
@@ -72,43 +73,53 @@ const useStyles = makeStyles((theme) => ({
 function AboutUs() {
    const classes = useStyles();
    return (
-      <Grid id="aboutUs" className={classes.aboutUsBg}>
-         <Grid>
-            <Typography variant="h1" component="h1" className={classes.header}>
+      <>
+         <Grid id="aboutUs" className={classes.aboutUsBg}>
+            <Grid>
+               <Typography
+                  variant="h1"
+                  component="h1"
+                  className={classes.header}
+               >
                   About Us
-            </Typography>
-         </Grid>
-
-         <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-               <Grid xs={12} md={8}>
-                  <Typography className={classes.pageDescription} align="left">
-                     "At vero eos et accusamus et iusto odio dignissimos ducimus
-                     qui blanditiis praesentium voluptatum deleniti atque
-                     corrupti quos dolores et quas molestias excepturi sint
-                     occaecati cupiditate non provident, similique sunt in culpa
-                     qui officia deserunt mollitia animi, id est laborum et
-                     dolorum fuga. Et harum quidem rerum facilis est et expedita
-                     distinctio. Nam libero tempore, cum soluta nobis est
-                     eligendi optio cumque nihil impedit quo minus id quod
-                     maxime placeat.
-                  </Typography>
-               </Grid>
-               <Grid xs={12} md={4}>
-                  <div className={classes.box1}>
-                     <Typography variant="h6" component="h4" align="center">
-                        Accurate & Professional
-                     </Typography>
-                  </div>
-                  <div className={classes.box2}>
-                     <Typography variant="h5" component="h4" align="center">
-                        Custom Sheet Music
-                     </Typography>
-                  </div>
-               </Grid>
+               </Typography>
             </Grid>
-         </Box>
-      </Grid>
+
+            <Box sx={{ flexGrow: 1 }}>
+               <Grid container spacing={2}>
+                  <Grid xs={12} md={8}>
+                     <Typography
+                        className={classes.pageDescription}
+                        align="left"
+                     >
+                        "At vero eos et accusamus et iusto odio dignissimos
+                        ducimus qui blanditiis praesentium voluptatum deleniti
+                        atque corrupti quos dolores et quas molestias excepturi
+                        sint occaecati cupiditate non provident, similique sunt
+                        in culpa qui officia deserunt mollitia animi, id est
+                        laborum et dolorum fuga. Et harum quidem rerum facilis
+                        est et expedita distinctio. Nam libero tempore, cum
+                        soluta nobis est eligendi optio cumque nihil impedit quo
+                        minus id quod maxime placeat.
+                     </Typography>
+                  </Grid>
+                  <Grid xs={12} md={4}>
+                     <div className={classes.box1}>
+                        <Typography variant="h6" component="h4" align="center">
+                           Accurate & Professional
+                        </Typography>
+                     </div>
+                     <div className={classes.box2}>
+                        <Typography variant="h5" component="h4" align="center">
+                           Custom Sheet Music
+                        </Typography>
+                     </div>
+                  </Grid>
+               </Grid>
+            </Box>
+         </Grid>
+         <Team />
+      </>
    );
 }
 

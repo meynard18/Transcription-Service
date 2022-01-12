@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Account;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Hash;
+
 
 class AccountController extends Controller
 {
@@ -28,10 +30,31 @@ class AccountController extends Controller
             $account->firstName=$request->input('firstName');
             $account->lastName=$request->input('lastName');
             $account->email=$request->input('email');
-            $account->password=$request->input('password');
+            $account->password=Hash::make($request->input('password'));
             $account->save(); //query builder orm
             return response()->json(['status'=>200, 'message'=>'Account added Successfully']);
         }
+    }
+
+    public function logIn (Request $request) {
+        $validator = Validator::make($request->all(),[
+            "email"=>"required|max:191",
+            "password"=>"required",
+         ]);
+         if ($validator->fails()) {
+            return response()->json(['status'=>422, "validate_err"=>$validator->errors()]);
+        }
+        else {
+            $account = Account::where('email', $request->email)->first();
+
+            if (! $account || ! Hash::check($request->password, $account->password)) {
+                return response()->json([
+                    'status'=>401,
+                    'message'=>'Invalid Credentials',
+                ]);
+            }
+        }
+
     }
 
     public function edit ($id) {

@@ -1,14 +1,15 @@
 import { makeStyles, Typography, Grid, Button } from '@material-ui/core';
 import React from 'react';
 import Services from '../pages/Services';
-import AboutUs from './AboutUs';
+// import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import music from '../components/images/music.jpg';
 import PageTitle from '../components/PageTitle';
-import Team from './Team';
+// import Team from './Team';
 import Footer from './Footer';
 import ReadBtn from '../components/Btn';
 import { Link } from 'react-scroll';
+import Admin from "../components/admin/Admin";
 const useStyles = makeStyles(() => ({
    hero: {
       height: '100vh',
@@ -62,11 +63,8 @@ function Home() {
                   </Link>
                </Grid>
             </Grid>
-
+            <Admin />
             <Services />
-            <AboutUs />
-            <Team />
-            <ContactUs />
             <Footer />
          </div>
       </>

@@ -1,21 +1,32 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import email from "../components/images/email.png";
-import lock from "../components/images/lock.png";
-import UseForm from "../components/UseForm";
-import styles from "../components/styles/Login.module.css";
-// import { connect, useDispatch } from 'react-redux';
-// import Loader from '../components/Loader';
-// import {
-//    loadingToggleAction,
-//    loginAction,
-// } from "../store/actions/AuthActions";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import email from '../components/images/email.png';
+import lock from '../components/images/lock.png';
+import UseForm from '../components/UseForm';
+import styles from '../components/styles/Login.module.css';
+import axios from 'axios';
 
-function Login({ submitForm }) {
-   // , props
-   const { handleChange, handleFormSubmit, values, errors } = UseForm(
-      submitForm
-   );
+function Login() {
+   const [logInInput, setLogIn] = useState({
+      email: '',
+      password: '',
+   });
+
+   const handleInput = (e) => {
+      e.persist();
+      setLogIn({ ...logInInput, [e.target.name]: e.target.value });
+   };
+
+   const logInSubmit = (e) => {
+      e.preventDefault();
+      const data = {
+         email: logInInput.email,
+         password: logInInput.password,
+      }
+      axios.post(`api/login`, data).then(res => {
+
+      })
+   }
 
    // const [email, setEmail] = useState('');
    // let errorsObj = { email: '', password: '' };
@@ -48,66 +59,57 @@ function Login({ submitForm }) {
 
    return (
       <div className={styles.content}>
-         {/* <div }> */}
-         {/* {props.showLoading && <Loader />}
-         <div className='w-1/3 shadow p-3 border border-gray-400'>
-            <h1 className='text-2xl font-extrabold'>Login</h1>
-
-            {props.errorMessage && (
-               <div className='bg-red-300 text-red-900 border border-red-900 p-1 my-2'>
-                  {props.errorMessage}
-               </div>
-            )}
-            {props.successMessage && (
-               <div className='bg-green-300 text-green-900 border border-green-900 p-1 my-2'>
-                  {props.successMessage}
-               </div>
-            )} */}
-         <form className={styles.main2}>
+         <form onSubmit={logInSubmit} className={styles.main2}>
             <div className={styles.main}>
                <div className={styles.subMain}>
                   <div className={styles.center}>
-                     {/* <div style={imgs}>
-                        <div >
-                           <img src={profile} alt="profile" style={profileIcon} />
-                        </div>
-                     </div> */}
                      <div>
                         <h1 className={styles.lHeader}>Login</h1>
                         <div>
-                           <img src={email} alt="email" className={styles.emailIcon} />
+                           <img
+                              src={email}
+                              alt="email"
+                              className={styles.emailIcon}
+                           />
                            <input
                               type="email"
-                              placeholder="Enter Email-id"
-                              // className="fill"
+                              placeholder="Enter Email Address"
                               className={styles.fill}
                               name="email"
                               required
-                              value={values.email}
-                              onChange={handleChange}
-                           // onClick={handleFormSubmit}
+                              onChange={handleInput}
                            />
-                           {errors.email && <p className={styles.error}>{errors.email}</p>}
+
                         </div>
                         <div className={styles.secondInput}>
-                           <img src={lock} alt="password" className={styles.emailIcon} />
+                           <img
+                              src={lock}
+                              alt="password"
+                              className={styles.emailIcon}
+                           />
                            <input
                               type="password"
                               placeholder="Enter Password"
                               className={styles.fill}
                               name="password"
                               required
-                              value={values.password}
-                              onChange={handleChange}
-
+                              // value={values.password}
+                              onChange={handleInput}
                            />
-                           {errors.password && <p className={styles.error}>{errors.password}</p>}
+                           {/* {errors.password && (
+                              <p className={styles.error}>{errors.password}</p>
+                           )} */}
                         </div>
 
                         <div className={styles.btn}>
                            <Link to="/transcription">
-                              <button className={styles.loginBtn} type="button" onClick={handleFormSubmit}>Login</button>
-
+                              <button
+                                 className={styles.loginBtn}
+                                 type="button"
+                              // onClick={handleFormSubmit}
+                              >
+                                 Login
+                              </button>
                            </Link>
                         </div>
 
@@ -116,7 +118,6 @@ function Login({ submitForm }) {
                               <li>Register Now</li>
                            </Link>
                         </div>
-
                      </div>
                   </div>
                </div>

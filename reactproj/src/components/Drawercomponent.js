@@ -40,20 +40,22 @@ function DrawerComponent() {
             <List>
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
-                     <Link className={classes.link} to="/E-com-groupproj">
+                     <Link className={classes.link} to="/">
                         Home
                      </Link>
                   </ListItemText>
                </ListItem>
                <Divider />
 
+              
+
                <ListItem onClick={() => setOpenDrawer(false)}>
                   <ListItemText>
                      <HashLink
                         className={classes.link}
-                        to="/E-com-groupproj#services"
+                        to="/aboutUs"
                      >
-                        Services
+                        About Us
                      </HashLink>
                   </ListItemText>
                </ListItem>
@@ -63,20 +65,9 @@ function DrawerComponent() {
                   <ListItemText>
                      <HashLink
                         className={classes.link}
-                        to="/E-com-groupproj#aboutUs"
+                        to="/transcription"
                      >
-                        About Us
-                     </HashLink>
-                  </ListItemText>
-               </ListItem>
-               <Divider />
-               <ListItem onClick={() => setOpenDrawer(false)}>
-                  <ListItemText>
-                     <HashLink
-                        className={classes.link}
-                        to="/E-com-groupproj#aboutUs"
-                     >
-                        Transcriptions
+                        Transcription
                      </HashLink>
                   </ListItemText>
                </ListItem>
@@ -104,7 +95,7 @@ function DrawerComponent() {
                   <ListItemText>
                      <HashLink
                         className={classes.link}
-                        to="/E-com-groupproj#contactUs"
+                        to="/contactUs"
                      >
                         Contact Us
                      </HashLink>

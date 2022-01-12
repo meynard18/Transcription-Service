@@ -14,12 +14,15 @@ import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs'
 import axios from 'axios';
 import Admin from './components/admin/Admin';
-
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { checkAutoLogin } from './services/AuthService';
-
 axios.defaults.baseURL = 'http://localhost:8000/';
+axios.defaults.headers.post['Accept'] = 'application/json';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.withCredentials = true;
+axios.interceptors.request.use(function (config){
+   const token = localStorage.getItem('auth_token');
+   config.headers.Authorization = token ? `Bearer ${token}` : '';
+   return config;
+})
 
 function App() {
 
@@ -30,7 +33,7 @@ function App() {
 
             <div className="content">
                <Routes>
-                  <Route exact path="/E-com-groupproj" element={<Home />} />
+                  <Route exact path="/" element={<Home />} />
                   <Route
                      exact
                      path="/transcription"

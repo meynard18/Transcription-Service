@@ -1,7 +1,8 @@
 import React from 'react';
+import swal from 'sweetalert';
 import logo from './images/logo.png';
-import { NavLink } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { NavLink, useNavigate } from 'react-router-dom';
+
 import { Link } from 'react-scroll';
 import {
    AppBar,
@@ -10,8 +11,10 @@ import {
    makeStyles,
    useTheme,
    useMediaQuery,
+   Button,
 } from '@material-ui/core';
 import DrawerComponent from './Drawercomponent';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
    navbar: {
@@ -45,6 +48,45 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar() {
+   
+   const history = useNavigate();
+   var AuthButtons = '';
+   const logoutSubmit = (e) => {
+      e.preventDefault();
+
+      axios.post(`api/logout`).then((res) => {
+         if (res.data.status === 200) {
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('auth_name');
+            swal('Success', res.data.message, 'Success');
+            history('/');
+         }
+      });
+   };
+   if (!localStorage.getItem('auth_token')) {
+      AuthButtons = (
+         <>
+            {' '}
+            <NavLink className="nav-link" to="/logIn" className={classes.link}>
+               Login
+            </NavLink>
+            <NavLink
+               className="nav-link"
+               to="/register"
+               className={classes.link}
+            >
+               Register
+            </NavLink>
+         </>
+      );
+   } else {
+      AuthButtons = (
+         <Button variant="text" type="button" onClick={logoutSubmit}>
+            Logout
+         </Button>
+      );
+   }
+
    const classes = useStyles();
    const theme = useTheme();
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -59,17 +101,9 @@ function Navbar() {
                <DrawerComponent />
             ) : (
                <div className={classes.navlink}>
-                  
-                 
-                  <NavLink
-                     className="nav-link"
-                     to="/E-com-groupproj"
-                     className={classes.link}
-                  >
+                  <NavLink className="nav-link" to="/" className={classes.link}>
                      Home
                   </NavLink>
-
-
 
                   <NavLink
                      className="nav-link"
@@ -89,13 +123,7 @@ function Navbar() {
                   <NavLink to="/faq" className={classes.link}>
                      FAQs
                   </NavLink>
-                  <NavLink
-                     className="nav-link"
-                     to="/logIn"
-                     className={classes.link}
-                  >
-                     Login
-                  </NavLink>
+
                   <NavLink
                      className="nav-link"
                      to="/contactUs"
@@ -110,11 +138,7 @@ function Navbar() {
                   >
                      Admin
                   </NavLink>
-                  
-
-
-
-
+                  {AuthButtons}
                </div>
             )}
          </Toolbar>

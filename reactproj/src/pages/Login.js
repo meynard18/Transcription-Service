@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import email from '../components/images/email.png';
 import lock from '../components/images/lock.png';
-import UseForm from '../components/UseForm';
 import styles from '../components/styles/Login.module.css';
 import axios from 'axios';
+import swal from 'sweetalert';
 
 function Login() {
+   const history = useNavigate();
    const [logInInput, setLogIn] = useState({
       email: '',
       password: '',
+      error_list: [],
    });
 
    const handleInput = (e) => {
@@ -23,37 +25,26 @@ function Login() {
          email: logInInput.email,
          password: logInInput.password,
       };
-      axios.post(`api/login`, data).then((res) => {});
+
+      axios.get('/sanctum/csrf-cookie').then((response) => {
+         axios.post(`api/login`, data).then((res) => {
+            if (res.data.status === 200) {
+               localStorage.setItem('auth_token', res.data.token);
+               localStorage.setItem('auth_name', res.data.username);
+               swal('Success', res.data.message, 'Success');
+               history('/');
+
+            } else if (res.data.status === 401) {
+               swal('Warning',  res.data.message, 'Warning')
+            } else {
+               setLogIn({
+                  ...logInInput,
+                  error_list: res.data.validation_errors,
+               });
+            }
+         });
+      });
    };
-
-   // const [email, setEmail] = useState('');
-   // let errorsObj = { email: '', password: '' };
-   // const [error, setErrors] = useState(errorsObj);
-   // const [password, setPassword] = useState('');
-
-   // const dispatch = useDispatch();
-
-   // function onLogin(e) {
-   //    e.preventDefault();
-   //    let error = false;
-   //    const errorObj = { ...errorsObj };
-   //    if (email === '') {
-   //       errorObj.email = 'Email is Required';
-   //       error = true;
-   //    }
-
-   //    if (password === '') {
-   //       errorObj.password = 'Password is Required';
-   //       error = true;
-   //    }
-
-   //    setErrors(errorObj);
-
-   //    if (error) return;
-   //    dispatch(loadingToggleAction(true));
-
-   //    dispatch(loginAction(email, password, props.history));
-   // }
 
    return (
       <div className={styles.content}>
@@ -75,8 +66,11 @@ function Login() {
                               className={styles.fill}
                               name="email"
                               required
+                              value={logInInput.email}
                               onChange={handleInput}
                            />
+                           <br />
+                           <span>{logInInput.error_list.email}</span>
                         </div>
                         <div className={styles.secondInput}>
                            <img
@@ -88,24 +82,18 @@ function Login() {
                               type="password"
                               placeholder="Enter Password"
                               className={styles.fill}
-                              name="password"
                               required
-                              // value={values.password}
+                              name="password"
+                              value={logInInput.password}
                               onChange={handleInput}
                            />
+                           <br />
+                           <span>{logInInput.error_list.password}</span>
                         </div>
 
-                        <div className={styles.btn}>
-                    
-                           <button
-                              className={styles.loginBtn}
-                              type="button"
-                           
-                           >
-                              Login
-                           </button>
-                   
-                        </div>
+                        <button type="submit" className={styles.loginBtn}>
+                           Login
+                        </button>
 
                         <div className={styles.regLink}>
                            <Link className={styles.link} to="/register">
@@ -118,16 +106,6 @@ function Login() {
             </div>
          </form>
       </div>
-      // </div >
    );
 }
 export default Login;
-// const mapStateToProps = (state) => {
-//    return {
-//       errorMessage: state.auth.errorMessage,
-//       successMessage: state.auth.successMessage,
-//       showLoading: state.auth.showLoading,
-//    };
-// };
-
-// export default connect(mapStateToProps)(Login);

@@ -13,20 +13,9 @@ import EditProduct from './pages/EditProduct';
 import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs'
 import axios from 'axios';
-
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
-// import { checkAutoLogin } from './services/AuthService';
-
 axios.defaults.baseURL = 'http://localhost:8000/';
 
 function App() {
-   // props
-   // const dispatch = useDispatch();
-   // useEffect(() => {
-   //    console.log(props);
-   //    checkAutoLogin(dispatch, props.history);
-   // }, []);
 
    return (
       <Router>
@@ -46,7 +35,7 @@ function App() {
                   <Route exact path="/register" element={<Register />} />
                   <Route exact path="/account" element={<ViewAccount />} />
                   <Route exact path="/contactUs" element={<ContactUs />} />
-                  <Route exact path="/aboutUs" element={<AboutUs/>}/>
+                  <Route exact path="/aboutUs" element={<AboutUs />} />
                   <Route
                      exact
                      path="/editAccount/:id"

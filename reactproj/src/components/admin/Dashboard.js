@@ -1,7 +1,4 @@
 import { useEffect, useState } from 'react';
-import PieChart from './PieChart';
-
-
 
 const Dashboard = () => {
 

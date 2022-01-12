@@ -12,6 +12,7 @@ import AddTranscription from './pages/AddTranscription';
 import EditProduct from './pages/EditProduct';
 import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs'
+import Admin from './components/admin/Admin';
 import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8000/';
 
@@ -50,6 +51,13 @@ function App() {
                      exact
                      path="/transcription/editProduct/:id"
                      element={<EditProduct />}
+                  />
+                  <Route
+                     exact
+                     path="/admin"
+                     // name="Admin"
+                     // render={(props) => <Admin {...props} />}
+                     element={<Admin />}
                   />
                </Routes>
             </div>

@@ -63,7 +63,6 @@ function Home() {
                   </Link>
                </Grid>
             </Grid>
-            <Admin />
             <Services />
             <Footer />
          </div>

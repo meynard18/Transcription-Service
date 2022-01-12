@@ -76,6 +76,7 @@ function Account() {
          <TableContainer component={Paper}>
             <Table sx={{ minWidth: 450 }} aria-label="simple table">
                <TableHead>
+
                   <TableRow>
                      <TableCell align="center">Id</TableCell>
                      <TableCell align="center">First Name</TableCell>

@@ -59,20 +59,8 @@ function Navbar() {
                <DrawerComponent />
             ) : (
                <div className={classes.navlink}>
-                  <NavLink
-                     className="nav-link"
-                     to="/addProduct"
-                     className={classes.link}
-                  >
-                     AddSong
-                  </NavLink>
-                  <NavLink
-                     className="nav-link"
-                     to="/account"
-                     className={classes.link}
-                  >
-                     Account
-                  </NavLink>
+                  
+                 
                   <NavLink
                      className="nav-link"
                      to="/E-com-groupproj"
@@ -115,6 +103,14 @@ function Navbar() {
                   >
                      Contact Us
                   </NavLink>
+                  <NavLink
+                     className="nav-link"
+                     to="/admin"
+                     className={classes.link}
+                  >
+                     Admin
+                  </NavLink>
+                  
 
 
 

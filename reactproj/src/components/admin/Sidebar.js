@@ -11,7 +11,7 @@ const Sidebar = () => {
 
                         <NavLink
                             className="nav-link"
-                            to="/addTranscription"
+                            to="/addProduct"
                         //  className={classes.link}
                         >
                             Add Transcription

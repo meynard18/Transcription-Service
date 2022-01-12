@@ -20,14 +20,6 @@ const Dashboard = () => {
 
     return (
         <div className="col main pt-5 mt-3">
-            {/* 
-            <nav aria-label="breadcrumb">
-                <ol className="breadcrumb">
-                    <li className="breadcrumb-item"><a href="#">Home</a></li>
-                    <li className="breadcrumb-item"><a href="#">Library</a></li>
-                    <li className="breadcrumb-item active" aria-current="page">Data</li>
-                </ol>
-            </nav> */}
             <p className="lead d-none d-sm-block">User Details And Records</p>
 
             <div className="alert alert-warning fade collapse" role="alert" id="myAlert">
@@ -60,53 +52,10 @@ const Dashboard = () => {
                         </div>
                     </div>
                 </div>
-                {/* <div className="col-xl-3 col-sm-6 py-2">
-                    <div className="card text-white bg-info h-100">
-                        <div className="card-body bg-info">
-                            <div className="rotate">
-                                <i className="fab fa-twitter fa-4x"></i>
-                            </div>
-                            <h6 className="text-uppercase">Tweets</h6>
-                            <h1 className="display-4">125</h1>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-xl-3 col-sm-6 py-2">
-                    <div className="card text-white bg-warning h-100">
-                        <div className="card-body">
-                            <div className="rotate">
-                                <i className="fa fa-share fa-4x"></i>
-                            </div>
-                            <h6 className="text-uppercase">Shares</h6>
-                            <h1 className="display-4">36</h1>
-                        </div>
-                    </div>
-                </div> */}
+
             </div>
 
             <hr />
-            {/* <div className="row placeholders mb-3">
-            <div className="col-6 col-sm-3 placeholder text-center">
-                <img src="//placehold.it/200/dddddd/fff?text=1" className="mx-auto img-fluid rounded-circle" alt="Generic placeholder thumbnail"/>
-                <h4>Responsive</h4>
-                <span className="text-muted">Device agnostic</span>
-            </div>
-            <div className="col-6 col-sm-3 placeholder text-center">
-                <img src="//placehold.it/200/e4e4e4/fff?text=2" className="mx-auto img-fluid rounded-circle" alt="Generic placeholder thumbnail"/>
-                <h4>Frontend</h4>
-                <span className="text-muted">UI / UX oriented</span>
-            </div>
-            <div className="col-6 col-sm-3 placeholder text-center">
-                <img src="//placehold.it/200/d6d6d6/fff?text=3" className="mx-auto img-fluid rounded-circle" alt="Generic placeholder thumbnail"/>
-                <h4>HTML5</h4>
-                <span className="text-muted">Standards-based</span>
-            </div>
-            <div className="col-6 col-sm-3 placeholder text-center">
-                <img src="//placehold.it/200/e0e0e0/fff?text=4" className="center-block img-fluid rounded-circle" alt="Generic placeholder thumbnail"/>
-                <h4>Framework</h4>
-                <span className="text-muted">CSS and JavaScript</span>
-            </div>
-        </div> */}
 
             <div className="row ">
                 <div className="col-lg-7 col-md-6 col-sm-12">
@@ -120,8 +69,7 @@ const Dashboard = () => {
                                     <th>No</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    {/* <th>Column</th>
-                                    <th>Record Data</th> */}
+                                
                                 </tr>
                             </thead>
                             <tbody>

@@ -13,6 +13,7 @@ import EditProduct from './pages/EditProduct';
 import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs'
 import axios from 'axios';
+import Admin from './components/admin/Admin';
 
 // import { useEffect } from 'react';
 // import { useDispatch } from 'react-redux';
@@ -21,12 +22,6 @@ import axios from 'axios';
 axios.defaults.baseURL = 'http://localhost:8000/';
 
 function App() {
-   // props
-   // const dispatch = useDispatch();
-   // useEffect(() => {
-   //    console.log(props);
-   //    checkAutoLogin(dispatch, props.history);
-   // }, []);
 
    return (
       <Router>
@@ -62,6 +57,13 @@ function App() {
                      path="/transcription/editProduct/:id"
                      element={<EditProduct />}
                   />
+                  <Route
+                     exact
+                     path="/admin"
+                     element={<Admin />}
+                  />
+
+                  
                </Routes>
             </div>
          </div>

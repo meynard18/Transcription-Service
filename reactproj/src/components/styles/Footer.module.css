@@ -34,3 +34,11 @@ a {
   cursor: pointer;
   color: #ffe3fe;
 }
+
+.link {
+  cursor: pointer;
+  color: #ffe3fe;
+}
+.link:hover {
+  color: #93329e;
+}

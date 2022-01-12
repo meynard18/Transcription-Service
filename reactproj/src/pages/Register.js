@@ -62,7 +62,8 @@ function Register() {
                         <div>
                             <div className={styles.rHeader}>
                                 <h1>Registration</h1>
-                                <div>
+                                <div className={styles.mailId}>
+                                    {/* <div className={styles.marginInput}> */}
                                     <img src={profile} alt="firstName" className={styles.emailIcon} />
                                     <input
                                         type="text"
@@ -75,7 +76,8 @@ function Register() {
                                     />
 
                                 </div>
-                                <div>
+                                <div className={styles.mailId}>
+                                    {/* <div className={styles.marginInput}> */}
                                     <img src={profile} alt="Last Name" className={styles.emailIcon} />
                                     <input
                                         type="text"

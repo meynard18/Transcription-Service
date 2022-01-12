@@ -9,7 +9,7 @@ import PageTitle from '../components/PageTitle';
 import Footer from './Footer';
 import ReadBtn from '../components/Btn';
 import { Link } from 'react-scroll';
-import Admin from "../components/admin/Admin";
+
 const useStyles = makeStyles(() => ({
    hero: {
       height: '100vh',
@@ -63,7 +63,6 @@ function Home() {
                   </Link>
                </Grid>
             </Grid>
-            <Admin />
             <Services />
             <Footer />
          </div>

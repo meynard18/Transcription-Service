@@ -22,11 +22,9 @@ function Login() {
       const data = {
          email: logInInput.email,
          password: logInInput.password,
-      }
-      axios.post(`api/login`, data).then(res => {
-
-      })
-   }
+      };
+      axios.post(`api/login`, data).then((res) => {});
+   };
 
 
    return (
@@ -51,7 +49,6 @@ function Login() {
                               required
                               onChange={handleInput}
                            />
-
                         </div>
                         <div className={styles.secondInput}>
                            <img
@@ -68,21 +65,18 @@ function Login() {
                               // value={values.password}
                               onChange={handleInput}
                            />
-                           {/* {errors.password && (
-                              <p className={styles.error}>{errors.password}</p>
-                           )} */}
                         </div>
 
                         <div className={styles.btn}>
-                           <Link to="/transcription">
-                              <button
-                                 className={styles.loginBtn}
-                                 type="button"
-                              // onClick={handleFormSubmit}
-                              >
-                                 Login
-                              </button>
-                           </Link>
+                    
+                           <button
+                              className={styles.loginBtn}
+                              type="button"
+                           
+                           >
+                              Login
+                           </button>
+                   
                         </div>
 
                         <div className={styles.regLink}>

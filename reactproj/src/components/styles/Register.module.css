@@ -38,6 +38,10 @@
   border: none;
   outline: none;
 }
+.marginInput {
+  margin-top: 10px;
+  /* margin-bottom: 10px; */
+}
 
 .fill {
   padding-left: 70px;

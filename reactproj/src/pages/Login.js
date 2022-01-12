@@ -26,6 +26,35 @@ function Login() {
       axios.post(`api/login`, data).then((res) => {});
    };
 
+   // const [email, setEmail] = useState('');
+   // let errorsObj = { email: '', password: '' };
+   // const [error, setErrors] = useState(errorsObj);
+   // const [password, setPassword] = useState('');
+
+   // const dispatch = useDispatch();
+
+   // function onLogin(e) {
+   //    e.preventDefault();
+   //    let error = false;
+   //    const errorObj = { ...errorsObj };
+   //    if (email === '') {
+   //       errorObj.email = 'Email is Required';
+   //       error = true;
+   //    }
+
+   //    if (password === '') {
+   //       errorObj.password = 'Password is Required';
+   //       error = true;
+   //    }
+
+   //    setErrors(errorObj);
+
+   //    if (error) return;
+   //    dispatch(loadingToggleAction(true));
+
+   //    dispatch(loginAction(email, password, props.history));
+   // }
+
    return (
       <div className={styles.content}>
          <form onSubmit={logInSubmit} className={styles.main2}>
@@ -89,8 +118,16 @@ function Login() {
             </div>
          </form>
       </div>
-      // </div>
+      // </div >
    );
 }
-
 export default Login;
+// const mapStateToProps = (state) => {
+//    return {
+//       errorMessage: state.auth.errorMessage,
+//       successMessage: state.auth.successMessage,
+//       showLoading: state.auth.showLoading,
+//    };
+// };
+
+// export default connect(mapStateToProps)(Login);

@@ -59,7 +59,7 @@ function Navbar() {
                <DrawerComponent />
             ) : (
                <div className={classes.navlink}>
-                     <NavLink
+                  <NavLink
                      className="nav-link"
                      to="/addProduct"
                      className={classes.link}
@@ -82,7 +82,7 @@ function Navbar() {
                   </NavLink>
 
 
-          
+
                   <NavLink
                      className="nav-link"
                      to="/aboutUs"
@@ -116,9 +116,9 @@ function Navbar() {
                      Contact Us
                   </NavLink>
 
-           
-               
-               
+
+
+
                </div>
             )}
          </Toolbar>

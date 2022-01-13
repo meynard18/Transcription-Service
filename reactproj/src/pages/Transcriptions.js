@@ -1,10 +1,10 @@
 import '../components/styles/Transcriptions.css';
-import TBG from '../components/images/transcript-bg.png';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { Link } from 'react-router-dom';
-// import DATA from '../MOCK_DATA.json';
+import { useCart } from 'react-use-cart';
+import AddCart from '../components/AddCart';
 
 function Transcriptions() {
    const [products, setProducts] = useState([]);
@@ -19,6 +19,7 @@ function Transcriptions() {
    }, []);
 
    const [searchTerm, setSearchTerm] = useState("");
+   const { addItem } = useCart();
 
    const deleteProduct = (e, id) => {
       e.preventDefault();
@@ -37,7 +38,7 @@ function Transcriptions() {
    };
 
    if (loading) {
-      return <h4>Loading Product Data</h4>;
+      return <h4>Loading Product Data...</h4>;
    
    } else {
       var product_HTMLTABLE = '';
@@ -77,6 +78,7 @@ function Transcriptions() {
                   <button
                   type="button"
                   className="btn btn-default btn-sm btn-warning"
+                  onClick = {() => addItem(item)}
                   >
                      <i class="bi bi-cart-plus"></i>
                   </button>
@@ -86,45 +88,48 @@ function Transcriptions() {
       });
    }
    return (
-      <div className="transcriptions">
-         <div className="container-fluid hero2">
-            <figure>
-               <img src={TBG} alt="" className="tbg" />
-            </figure>
-            <div className="hero2-text">
-               <h3 className="ht2">
-                  lorem ipsum dolor sit amet, consectetur adipiscing
-               </h3>
+      <div className="container-fluid transcriptions">
+         <div className="hero2">
+            <div className="tabledata">
+               <div class="input-group container-sm mt-5">
+                  <input
+                     type="text"
+                     class="form-control"
+                     placeholder="SEARCH BY SONG TITLE OR ARTIST"
+                     onChange = {(e) => {
+                        setSearchTerm(e.target.value);
+                  }}
+                  />
+               </div>
+               <div className="song-list mt-5">
+                  <table className="table">
+                     <thead>
+                        <tr className="text-center">
+                           <th>#</th>
+                           <th>TITLE</th>
+                           <th>ARTIST</th>
+                           <th>CATEGORY</th>
+                           <th>PRICE</th>
+                           <th>ACTION</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        {product_HTMLTABLE}
+                     
+                     </tbody>
+                  </table>
+               </div>    
             </div>
-            <div class="container-sm input-group">
-               <input
-                  type="text"
-                  class="form-control"
-                  placeholder="SEARCH BY SONG TITLE OR ARTIST"
-                  onChange = {(e) => {
-                     setSearchTerm(e.target.value);
-                 }}
-               />
+            <div className="container-sm orders">
+               <div className="order-title">
+                  <p>Order Summary</p>
+               </div>
+               <div>
+                  <AddCart/>
+               </div>
             </div>
-         </div>
-
-         <div className="container-sm song-list mt-5">
-            <table className="table">
-               <thead>
-                  <tr className="text-center">
-                     <th>#</th>
-                     <th>TITLE</th>
-                     <th>ARTIST</th>
-                     <th>CATEGORY</th>
-                     <th>PRICE</th>
-                     <th>ACTION</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  {product_HTMLTABLE}
-                 
-               </tbody>
-            </table>
+            
+           
          </div>
       </div>
    );

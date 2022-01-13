@@ -13,6 +13,7 @@ import EditProduct from './pages/EditProduct';
 import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs';
 import axios from 'axios';
+import { CartProvider } from 'react-use-cart';
 import Admin from './components/admin/Admin';
 axios.defaults.baseURL = 'http://localhost:8000/';
 axios.defaults.headers.post['Accept'] = 'application/json';
@@ -26,44 +27,46 @@ axios.interceptors.request.use(function (config) {
 
 function App() {
    return (
-      <Router>
-         <div className="App">
-            <Navbar />
+      <CartProvider>
+         <Router>
+            <div className="App">
+               <Navbar />
 
-            <div className="content">
-               <Routes>
-                  <Route exact path="/" element={<Home />} />
-                  <Route
-                     exact
-                     path="/transcription"
-                     element={<Transcriptions />}
-                  ></Route>
-                  <Route exact path="/faq" element={<Faq />}></Route>
-                  <Route exact path="/login" element={<Login />}></Route>
-                  <Route exact path="/register" element={<Register />} />
-                  <Route exact path="/account" element={<ViewAccount />} />
-                  <Route exact path="/contactUs" element={<ContactUs />} />
-                  <Route exact path="/aboutUs" element={<AboutUs />} />
-                  <Route
-                     exact
-                     path="/editAccount/:id"
-                     element={<EditAccount />}
-                  />
-                  <Route
-                     exact
-                     path="/addProduct"
-                     element={<AddTranscription />}
-                  />
-                  <Route
-                     exact
-                     path="/transcription/editProduct/:id"
-                     element={<EditProduct />}
-                  />
-                  <Route exact path="/admin" element={<Admin />} />
-               </Routes>
+               <div className="content">
+                  <Routes>
+                     <Route exact path="/" element={<Home />} />
+                     <Route
+                        exact
+                        path="/transcription"
+                        element={<Transcriptions />}
+                     ></Route>
+                     <Route exact path="/faq" element={<Faq />}></Route>
+                     <Route exact path="/login" element={<Login />}></Route>
+                     <Route exact path="/register" element={<Register />} />
+                     <Route exact path="/account" element={<ViewAccount />} />
+                     <Route exact path="/contactUs" element={<ContactUs />} />
+                     <Route exact path="/aboutUs" element={<AboutUs />} />
+                     <Route
+                        exact
+                        path="/editAccount/:id"
+                        element={<EditAccount />}
+                     />
+                     <Route
+                        exact
+                        path="/addProduct"
+                        element={<AddTranscription />}
+                     />
+                     <Route
+                        exact
+                        path="/transcription/editProduct/:id"
+                        element={<EditProduct />}
+                     />
+                     <Route exact path="/admin" element={<Admin />} />
+                  </Routes>
+               </div>
             </div>
-         </div>
-      </Router>
+         </Router>
+      </CartProvider>
    );
 }
 

@@ -1,7 +1,8 @@
 import React from 'react';
+import swal from 'sweetalert';
 import logo from './images/logo.png';
-import { NavLink } from 'react-router-dom';
-import { HashLink } from 'react-router-hash-link';
+import { NavLink, useNavigate } from 'react-router-dom';
+
 import { Link } from 'react-scroll';
 // import { useGlobalContext } from './Context'
 import {
@@ -11,8 +12,10 @@ import {
    makeStyles,
    useTheme,
    useMediaQuery,
+   Button,
 } from '@material-ui/core';
 import DrawerComponent from './Drawercomponent';
+import axios from 'axios';
 
 const useStyles = makeStyles((theme) => ({
    navbar: {
@@ -46,7 +49,53 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar() {
-   // const { amount } = useGlobalContext()
+   const history = useNavigate();
+
+   const logoutSubmit = (e) => {
+      e.preventDefault();
+
+      axios.post(`/api/logout`).then((res) => {
+         if (res.data.status === 200) {
+            localStorage.removeItem('auth_token');
+            localStorage.removeItem('auth_name');
+            swal('Success', res.data.message, 'Success');
+            history('/');
+         }
+      });
+   };
+   var AuthButtons = '';
+   if (!localStorage.getItem('auth_token')) {
+      AuthButtons = (
+         <ul>
+            <li>
+               <NavLink to="/login">Login</NavLink>
+            </li>
+            <li>
+               <NavLink to="/register">Register</NavLink>
+            </li>
+         </ul>
+         // <>
+         //    {' '}
+         //    <NavLink className="nav-link" to="/logIn" className={classes.link}>
+         //       Login
+         //    </NavLink>
+         //    <NavLink
+         //       className="nav-link"
+         //       to="/register"
+         //       className={classes.link}
+         //    >
+         //       Register
+         //    </NavLink>
+         // </>
+      );
+   } else {
+      AuthButtons = (
+         <Button variant="text" type="button" onClick={logoutSubmit}>
+            Logout
+         </Button>
+      );
+   }
+
    const classes = useStyles();
    const theme = useTheme();
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -61,17 +110,9 @@ function Navbar() {
                <DrawerComponent />
             ) : (
                <div className={classes.navlink}>
-
-
-                  <NavLink
-                     className="nav-link"
-                     to="/E-com-groupproj"
-                     className={classes.link}
-                  >
+                  <NavLink to="/" className={classes.link}>
                      Home
                   </NavLink>
-
-
 
                   <NavLink
                      className="nav-link"
@@ -91,13 +132,7 @@ function Navbar() {
                   <NavLink to="/faq" className={classes.link}>
                      FAQs
                   </NavLink>
-                  <NavLink
-                     className="nav-link"
-                     to="/logIn"
-                     className={classes.link}
-                  >
-                     Login
-                  </NavLink>
+
                   <NavLink
                      className="nav-link"
                      to="/contactUs"
@@ -112,15 +147,7 @@ function Navbar() {
                   >
                      Admin
                   </NavLink>
-
-                  {/* <NavLink>
-                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
-                        <path d='M16 6v2h2l2 12H0L2 8h2V6a6 6 0 1 1 12 0zm-2 0a4 4 0 1 0-8 0v2h8V6zM4 10v2h2v-2H4zm10 0v2h2v-2h-2z' />
-                     </svg>
-                     <div className='amount-container'>
-                        <p className='total-amount'>{amount}</p>
-                     </div>
-                  </NavLink> */}
+                  {AuthButtons}
                </div>
             )}
          </Toolbar>

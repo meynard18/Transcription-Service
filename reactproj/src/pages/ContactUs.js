@@ -5,7 +5,7 @@ function ContactUs() {
     return (
         <div className={styles.contactUs} id="contactUs">
             <div className={styles.container}>
-                <form action="" onSubmit="" id="contact">
+                <form action="" onSubmit="" id="contact" class="form">
                     <div className={styles.formWord}>
                         <h1 className={styles.header}>
                             Contact Us

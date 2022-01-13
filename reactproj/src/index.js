@@ -5,10 +5,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Popper from '@popperjs/core';
+// import { AppProvider } from './components/Context';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 ReactDOM.render(
   <React.StrictMode>
+    {/* <AppProvider> */}
     <App />
+    {/* </AppProvider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

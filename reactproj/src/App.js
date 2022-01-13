@@ -14,15 +14,24 @@ import ContactUs from './pages/ContactUs';
 import AboutUs from './pages/AboutUs'
 import Admin from './components/admin/Admin';
 import axios from 'axios';
+// import { useGlobalContext } from "./components/Context";
+// import CartContainer from "./components/CartContainer";
 axios.defaults.baseURL = 'http://localhost:8000/';
 
 function App() {
-
+   // const { loading } = useGlobalContext();
+   // if (loading) {
+   //    return (
+   //       <div className='loading'>
+   //          <h1>Loading...</h1>
+   //       </div>
+   //    )
+   // }
    return (
       <Router>
          <div className="App">
             <Navbar />
-
+            {/* <CartContainer /> */}
             <div className="content">
                <Routes>
                   <Route exact path="/E-com-groupproj" element={<Home />} />

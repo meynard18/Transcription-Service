@@ -3,6 +3,7 @@ import logo from './images/logo.png';
 import { NavLink } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-scroll';
+// import { useGlobalContext } from './Context'
 import {
    AppBar,
    Toolbar,
@@ -45,6 +46,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar() {
+   // const { amount } = useGlobalContext()
    const classes = useStyles();
    const theme = useTheme();
    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -59,20 +61,8 @@ function Navbar() {
                <DrawerComponent />
             ) : (
                <div className={classes.navlink}>
-                  <NavLink
-                     className="nav-link"
-                     to="/addProduct"
-                     className={classes.link}
-                  >
-                     AddSong
-                  </NavLink>
-                  <NavLink
-                     className="nav-link"
-                     to="/account"
-                     className={classes.link}
-                  >
-                     Account
-                  </NavLink>
+
+
                   <NavLink
                      className="nav-link"
                      to="/E-com-groupproj"
@@ -115,14 +105,27 @@ function Navbar() {
                   >
                      Contact Us
                   </NavLink>
+                  <NavLink
+                     className="nav-link"
+                     to="/admin"
+                     className={classes.link}
+                  >
+                     Admin
+                  </NavLink>
 
-
-
-
+                  {/* <NavLink>
+                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'>
+                        <path d='M16 6v2h2l2 12H0L2 8h2V6a6 6 0 1 1 12 0zm-2 0a4 4 0 1 0-8 0v2h8V6zM4 10v2h2v-2H4zm10 0v2h2v-2h-2z' />
+                     </svg>
+                     <div className='amount-container'>
+                        <p className='total-amount'>{amount}</p>
+                     </div>
+                  </NavLink> */}
                </div>
             )}
          </Toolbar>
       </AppBar>
+
    );
 }
 

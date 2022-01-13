@@ -48,13 +48,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function Navbar() {
-   
    const history = useNavigate();
-   var AuthButtons = '';
+
    const logoutSubmit = (e) => {
       e.preventDefault();
 
-      axios.post(`api/logout`).then((res) => {
+      axios.post(`/api/logout`).then((res) => {
          if (res.data.status === 200) {
             localStorage.removeItem('auth_token');
             localStorage.removeItem('auth_name');
@@ -63,21 +62,30 @@ function Navbar() {
          }
       });
    };
+   var AuthButtons = '';
    if (!localStorage.getItem('auth_token')) {
       AuthButtons = (
-         <>
-            {' '}
-            <NavLink className="nav-link" to="/logIn" className={classes.link}>
-               Login
-            </NavLink>
-            <NavLink
-               className="nav-link"
-               to="/register"
-               className={classes.link}
-            >
-               Register
-            </NavLink>
-         </>
+         <ul>
+            <li>
+               <NavLink to="/login">Login</NavLink>
+            </li>
+            <li>
+               <NavLink to="/register">Register</NavLink>
+            </li>
+         </ul>
+         // <>
+         //    {' '}
+         //    <NavLink className="nav-link" to="/logIn" className={classes.link}>
+         //       Login
+         //    </NavLink>
+         //    <NavLink
+         //       className="nav-link"
+         //       to="/register"
+         //       className={classes.link}
+         //    >
+         //       Register
+         //    </NavLink>
+         // </>
       );
    } else {
       AuthButtons = (
@@ -101,7 +109,7 @@ function Navbar() {
                <DrawerComponent />
             ) : (
                <div className={classes.navlink}>
-                  <NavLink className="nav-link" to="/" className={classes.link}>
+                  <NavLink to="/" className={classes.link}>
                      Home
                   </NavLink>
 

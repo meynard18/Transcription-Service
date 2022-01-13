@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Symfony\Component\CssSelector\Node\FunctionNode;
 
+
 class AuthController extends Controller
 {
+
     public function register(Request $request) {
         $validator = Validator::make($request->all(),[
             "name"=>"required|max:191",
@@ -66,7 +68,8 @@ class AuthController extends Controller
 
     }
 
-    public function logout(){
+    public function logout()
+    {
         auth()->user()->tokens()->delete();
         return response()->json([
             'status'=>200,

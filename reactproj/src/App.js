@@ -11,21 +11,20 @@ import EditAccount from './pages/EditAccount';
 import AddTranscription from './pages/AddTranscription';
 import EditProduct from './pages/EditProduct';
 import ContactUs from './pages/ContactUs';
-import AboutUs from './pages/AboutUs'
+import AboutUs from './pages/AboutUs';
 import axios from 'axios';
 import Admin from './components/admin/Admin';
 axios.defaults.baseURL = 'http://localhost:8000/';
 axios.defaults.headers.post['Accept'] = 'application/json';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.withCredentials = true;
-axios.interceptors.request.use(function (config){
+axios.interceptors.request.use(function (config) {
    const token = localStorage.getItem('auth_token');
    config.headers.Authorization = token ? `Bearer ${token}` : '';
    return config;
-})
+});
 
 function App() {
-
    return (
       <Router>
          <div className="App">
@@ -44,7 +43,7 @@ function App() {
                   <Route exact path="/register" element={<Register />} />
                   <Route exact path="/account" element={<ViewAccount />} />
                   <Route exact path="/contactUs" element={<ContactUs />} />
-                  <Route exact path="/aboutUs" element={<AboutUs/>}/>
+                  <Route exact path="/aboutUs" element={<AboutUs />} />
                   <Route
                      exact
                      path="/editAccount/:id"
@@ -60,13 +59,7 @@ function App() {
                      path="/transcription/editProduct/:id"
                      element={<EditProduct />}
                   />
-                  <Route
-                     exact
-                     path="/admin"
-                     element={<Admin />}
-                  />
-
-                  
+                  <Route exact path="/admin" element={<Admin />} />
                </Routes>
             </div>
          </div>

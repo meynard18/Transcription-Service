@@ -90,11 +90,11 @@ function Login() {
                            <br />
                            <span>{logInInput.error_list.password}</span>
                         </div>
-
-                        <button type="submit" className={styles.loginBtn}>
-                           Login
-                        </button>
-
+                        <div className={styles.btn}>
+                           <button type="submit" className={styles.loginBtn}>
+                              Login
+                           </button>
+                        </div>
                         <div className={styles.regLink}>
                            <Link className={styles.link} to="/register">
                               <li>Register Now</li>

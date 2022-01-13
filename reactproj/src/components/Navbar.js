@@ -4,6 +4,7 @@ import logo from './images/logo.png';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import { Link } from 'react-scroll';
+// import { useGlobalContext } from './Context'
 import {
    AppBar,
    Toolbar,
@@ -151,6 +152,7 @@ function Navbar() {
             )}
          </Toolbar>
       </AppBar>
+
    );
 }
 

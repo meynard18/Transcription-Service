@@ -1,10 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Link } from "react-router-dom";
 const Sidebar = () => {
     return (
-        <div className="col-md-3 col-lg-2 sidebar-offcanvas pl-0" id="sidebar" role="navigation" style={{ backgroundColor: "#e9ecef" }}>
+        <div className="col-md-4 col-lg-2 sidebar-offcanvas pl-0" id="sidebar" role="navigation" style={{ backgroundColor: "#e9ecef" }}>
             <ul className="nav flex-column sticky-top pl-0 pt-5 p-3 mt-3 ">
-                <li className="nav-item mb-2 mt-3"><a className="nav-link text-secondary" href="#"><h5>Musika Dashboard</h5></a></li>
+                <li className="nav-item mb-2 mt-1">
+                    <Link className="nav-link text-secondary" to="/admin">
+                        <h5>Musika Dashboard</h5>
+                    </Link>
+                </li>
                 {/* <li className="nav-item mb-2 "><a className="nav-link text-secondary" href="#"><i className="fas fa-user font-weight-bold"></i> <span className="ml-3">Overview</span></a></li> */}
                 <li className="nav-item mb-2">
                     <a className="nav-link text-secondary" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i className="far fa-file-word font-weight-bold"></i> <span className="ml-3">

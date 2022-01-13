@@ -11,6 +11,7 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import axios from 'axios';
 import swal from 'sweetalert';
+import Sidebar from "../components/admin/Sidebar";
 
 function Account() {
    const [accounts, setAccounts] = useState([]);
@@ -48,13 +49,14 @@ function Account() {
       account_HTMLTABLE = accounts.map((item, index) => {
          return (
             <TableRow key={index}>
+
                <TableCell align="center">{item.id}</TableCell>
                <TableCell align="center">{item.firstName}</TableCell>
                <TableCell align="center">{item.lastName}</TableCell>
                <TableCell align="center">{item.email}</TableCell>
                <TableCell align="center">
                   <Link to={`/editAccount/${item.id}`}><Button variant="contained" >edit</Button>
-                    
+
                   </Link>
                </TableCell>
                <TableCell align="center">
@@ -73,6 +75,7 @@ function Account() {
 
    return (
       <>
+         <Sidebar />
          <TableContainer component={Paper}>
             <Table sx={{ minWidth: 450 }} aria-label="simple table">
                <TableHead>

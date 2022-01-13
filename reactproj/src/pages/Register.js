@@ -56,8 +56,8 @@ function Register() {
             <div className={styles.main}>
                <div className={styles.subMain}>
                   <div>
-                     <div className={styles.rHeader}>
-                        <h1>Registration</h1>
+                     <div >
+                        <h1 className={styles.rHeader}>Registration</h1>
                         <div className={styles.mailId}>
                            {/* <div className={styles.marginInput}> */}
                            <img

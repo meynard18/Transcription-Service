@@ -35,7 +35,7 @@ function Login() {
                history('/');
 
             } else if (res.data.status === 401) {
-               swal('Warning',  res.data.message, 'Warning')
+               swal('Warning', res.data.message, 'Warning')
             } else {
                setLogIn({
                   ...logInInput,
@@ -47,7 +47,7 @@ function Login() {
    };
 
    return (
-      <div className={styles.content}>
+      <div class=".container" className={styles.content}>
          <form onSubmit={logInSubmit} className={styles.main2}>
             <div className={styles.main}>
                <div className={styles.subMain}>
@@ -90,11 +90,11 @@ function Login() {
                            <br />
                            <span>{logInInput.error_list.password}</span>
                         </div>
-
-                        <button type="submit" className={styles.loginBtn}>
-                           Login
-                        </button>
-
+                        <div className={styles.btn}>
+                           <button type="submit" className={styles.loginBtn}>
+                              Login
+                           </button>
+                        </div>
                         <div className={styles.regLink}>
                            <Link className={styles.link} to="/register">
                               <li>Register Now</li>

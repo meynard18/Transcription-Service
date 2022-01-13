@@ -88,3 +88,427 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 376px) {
+  .main {
+    padding: 20px 15px 20px 15px;
+  }
+  .main2 {
+    padding: 20px 15px 20px 15px;
+  }
+  .loginBtn {
+    width: 50px;
+    height: 30px;
+  }
+  .fill {
+    padding-left: 35px;
+    font-size: 10px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    /* padding: 15px 0 0 15px; */
+    border: none;
+    outline: none;
+  }
+}
+@media screen and (max-width: 912px) {
+  .main {
+    padding: 20px 50px 20px 50px;
+  }
+  .main2 {
+    padding: 20px 40px 20px 40px;
+    margin-top: 5%;
+    width: 70%;
+  }
+  .btn {
+    font-size: 40px;
+  }
+
+  .loginBtn {
+    width: 150px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fill {
+    /* margin-left: auto; */
+    width: 550px;
+    /* padding-left: auto; */
+    font-size: 50px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    /* padding: 15px 0 0 15px; */
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    text-align: center;
+    color: #ffe3f3;
+    font-size: 70px;
+  }
+  .regLink {
+    padding-top: 10px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 598px) {
+  .main {
+    padding: 10px 5px 10px 5px;
+  }
+  .main2 {
+    padding: 70px 50px 30px 50px;
+  }
+  .loginBtn {
+    width: 50px;
+    height: 30px;
+  }
+  .fill {
+    padding-left: 10px;
+    font-size: 20px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    padding: 15px 0 0 15px;
+    border: none;
+    outline: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 20px 50px 20px 50px;
+  }
+  .main2 {
+    padding: 20px 40px 20px 40px;
+    margin-top: 5%;
+    width: 70%;
+  }
+  .btn {
+    font-size: 40px;
+  }
+
+  .loginBtn {
+    width: 150px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .fill {
+    /* margin-left: auto; */
+    width: 500px;
+    /* padding-left: auto; */
+    font-size: 50px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    /* padding: 15px 0 0 15px; */
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    text-align: center;
+    color: #ffe3f3;
+    font-size: 70px;
+  }
+  .regLink {
+    padding-top: 10px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .main {
+    padding: 10px 5px 10px 5px;
+    height: 40vh;
+  }
+  .main2 {
+    padding: 10px 50px 10px 50px;
+    height: 40vh;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .loginBtn {
+    width: 100px;
+    height: 45px;
+  }
+  .fill {
+    /* padding-left: 10px; */
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    padding: 15px 0 0 15px;
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .regLink {
+    font-size: 15px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .main {
+    padding: 10px 5px 10px 5px;
+    height: 40vh;
+  }
+  .main2 {
+    padding: 10px 50px 10px 50px;
+    height: 40vh;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .loginBtn {
+    width: 100px;
+    height: 45px;
+  }
+  .fill {
+    /* padding-left: 10px; */
+    width: 200px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    padding: 15px 0 0 15px;
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .regLink {
+    font-size: 15px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 280px) {
+  .main {
+    padding: 10px 5px 10px 5px;
+    height: 40vh;
+  }
+  .main2 {
+    padding: 10px 50px 10px 50px;
+    height: 40vh;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .loginBtn {
+    width: 100px;
+    height: 40px;
+  }
+  .fill {
+    /* padding-left: 10px; */
+    width: 170px;
+    height: 30px;
+    font-size: 20px;
+  }
+  .fill::placeholder {
+    /* padding-left: 10px; */
+
+    font-size: 13px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    padding: 15px 0 0 15px;
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .regLink {
+    font-size: 15px;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .main {
+    padding: 10px 5px 10px 5px;
+    height: 50vh;
+  }
+  .main2 {
+    padding: 10px 50px 10px 50px;
+    height: 50vh;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .loginBtn {
+    width: 100px;
+    height: 40px;
+  }
+  .fill {
+    /* padding-left: 10px; */
+    width: 470px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .fill::placeholder {
+    /* padding-left: 10px; */
+
+    font-size: 23px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    padding: 15px 0 0 15px;
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    font-size: 30px;
+    margin-top: 60px;
+  }
+  .regLink {
+    font-size: 22px;
+    margin-bottom: 100px;
+  }
+}
+@media screen and (max-width: 457px) {
+  .main {
+    padding: 10px 5px 10px 5px;
+    height: 80vh;
+    width: 70vw;
+  }
+  .main2 {
+    padding: 10px 50px 10px 50px;
+    height: 80vh;
+    width: 70vw;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .loginBtn {
+    width: 100px;
+    height: 40px;
+  }
+  .fill {
+    /* padding-left: 10px; */
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .fill::placeholder {
+    /* padding-left: 10px; */
+
+    font-size: 23px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    padding: 15px 0 0 15px;
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    font-size: 30px;
+    margin-top: 200px;
+  }
+  .regLink {
+    font-size: 22px;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 791px) {
+  .main {
+    padding: 10px 5px 10px 5px;
+    height: 80vh;
+    width: 70vw;
+  }
+  .main2 {
+    padding: 10px 50px 10px 50px;
+    height: 80vh;
+    width: 70vw;
+  }
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .loginBtn {
+    width: 100px;
+    height: 40px;
+  }
+  .fill {
+    /* padding-left: 10px; */
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .fill::placeholder {
+    /* padding-left: 10px; */
+
+    font-size: 23px;
+  }
+  .emailIcon {
+    height: 15px;
+    width: 25px;
+    position: absolute;
+    padding: 15px 0 0 15px;
+    border: none;
+    outline: none;
+  }
+  .lHeader {
+    font-size: 30px;
+    margin-top: 200px;
+  }
+  .regLink {
+    font-size: 22px;
+    margin-bottom: 100px;
+  }
+}

@@ -7,17 +7,6 @@
   /* flex-direction: row; */
 }
 
-/* .container {
-  width: 100%;
-
-  flex-direction: row;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #440a67;
-  width: 50vw;
-  height: 50vh;
-} */
 .formWord h1,
 h2,
 p {
@@ -165,4 +154,814 @@ form button:hover {
   justify-content: center;
   align-items: center;
   margin: auto;
+}
+
+/* 375 */
+@media screen and (max-width: 375px) {
+  .contactUs {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    height: 100vh;
+    width: 100vw;
+  }
+  .container {
+    width: 100%;
+
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 300px;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
+}
+
+/* 263 */
+
+@media screen and (max-width: 263px) {
+  .contactUs {
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
+    height: 80vh;
+    width: 100vw;
+  }
+  .container {
+    height: 80vh;
+    width: 100vw;
+
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 40px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 70vw;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
+}
+
+/* 475 */
+@media screen and (max-width: 475px) {
+  .contactUs {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    height: 100vh;
+    width: 100vw;
+  }
+  .container {
+    width: 100%;
+
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 300px;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
+}
+
+@media screen and (max-width: 558px) {
+  .contactUs {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    height: 100vh;
+    width: 100vw;
+  }
+  .container {
+    width: 100%;
+
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 300px;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
+}
+
+/* 677 */
+@media screen and (max-width: 677px) {
+  .contactUs {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    height: 100vh;
+    width: 100vw;
+  }
+  .container {
+    width: 100%;
+
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 300px;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
+}
+
+/* 767 */
+@media screen and (max-width: 767px) {
+  .contactUs {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    height: 100vh;
+    width: 100vw;
+  }
+  .container {
+    width: 100%;
+
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 300px;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
+}
+
+/* 831 */
+@media screen and (max-width: 831px) {
+  .contactUs {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    height: 100vh;
+    width: 100vw;
+  }
+  .container {
+    width: 100%;
+
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 300px;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
+}
+
+/* 955 */
+@media screen and (max-width: 955px) {
+  .contactUs {
+    /* margin-top: 10px; */
+    /* margin-bottom: 10px; */
+    height: 100vh;
+    width: 100vw;
+  }
+  .container {
+    width: 100px;
+    /* padding-left: 100px; */
+    /* margin-left: 100px; */
+    flex-direction: column;
+    /* display: -webkit-box;
+    display: -ms-flexbox; */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+  }
+  .form {
+    width: 100%;
+  }
+  form {
+    width: 100vw;
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 20px;
+  }
+  form button {
+    width: 100px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #93329e;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    font-weight: bold;
+    margin-top: 2%;
+    text-align: center;
+  }
+  form button:hover {
+    background-color: unset;
+    border: 2px solid #ffe3fe;
+    -webkit-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
+    transition: 0.5s linear;
+    color: #ffe3fe;
+    background-color: #440a67;
+  }
+  .formWord {
+    width: 300px;
+    padding: 4%;
+    background-color: #440a67;
+  }
+  .formWord h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    color: #ffe3fe;
+  }
+  .formWord h2 {
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "Josefin Sans", sans-serif;
+    margin-bottom: 10%;
+    text-align: center;
+    color: #ffe3fe;
+  }
+  .formWord p {
+    font-size: 20px;
+    margin: auto;
+    color: #ffe3fe;
+  }
+  .formWord input {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    padding-left: 3%;
+    color: #440a67;
+    background: #ffe3fe;
+  }
+  .formWord textarea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10%;
+    border: 0;
+    margin-top: 2%;
+    height: 80px;
+    color: #440a67;
+    background: #ffe3fe;
+    padding-left: 3%;
+  }
 }

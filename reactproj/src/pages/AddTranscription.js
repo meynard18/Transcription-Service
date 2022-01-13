@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { Link, useNavigate } from 'react-router-dom';
+import Sidebar from "../components/admin/Sidebar";
+
 
 function AddProduct() {
    const history = useNavigate();
@@ -45,7 +47,10 @@ function AddProduct() {
    };
    return (
       <div>
+         <Sidebar />
+
          <div className="container">
+
             <div className="card">
                <div class="card-header">
                   <h4>Add Product</h4>

@@ -11,9 +11,6 @@
     grid-template-columns: 2fr 1fr;
 }
 
-.tabledata {
-    
-}
 
 .orders {
     background-color: #93329E;
@@ -27,32 +24,18 @@
     border-bottom: 2px solid;
 }
 
-.btn {
-    background-color: #93329E;
-    color: #FFE3FE;
-}
 .song-list {
     height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
-    .hero2-text {
-        position: absolute;
-        top: 140px;
-        left: 0;
-        margin-left: 25%;
-    }
     
-    .ht2 {
-        font-size: 60px;
-    }
-
     .actions {
-        display: flex;
+        display:flex;
+        flex-direction: column;
     }
-
     .song-list {
-        height: 110vh;
+        height: 150vh;
     }
 }
 
@@ -64,13 +47,9 @@
         margin-left: 25%;
     }
     
-    .ht2 {
-        font-size: 50px;
-    }
-
-    .actions {
-        /* display: flex;
-        flex-direction: row; */
+    .hero2 {
+        display: flex;
+        flex-direction: column;
     }
 
     .song-list {

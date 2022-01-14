@@ -55,13 +55,13 @@ function Transcriptions() {
                                 }
                             }).map((item, index) => {
          return (
-            <tr key={index} className="text-center actions">
+            <tr key={index} className="text-center">
                <td>{item.id}</td>
                <td>{item.title}</td>
                <td>{item.artist}</td>
                <td>{item.category}</td>
                <td>{item.price}</td>
-               <td>
+               <td className="actions">
                   <Link
                      to={`editproduct/${item.id}`}
                      className="btn btn-success btn-sm"

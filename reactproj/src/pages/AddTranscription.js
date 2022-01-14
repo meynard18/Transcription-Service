@@ -52,13 +52,13 @@ function AddProduct() {
          <div className="container">
 
             <div className="card">
-               <div class="card-header">
+               <div className="card-header">
                   <h4>Add Product</h4>
                   <Link to={'/transcription'} className="btn btn-sm float-end">
                      Transcription
                   </Link>
                </div>
-               <div class="card-body">
+               <div className="card-body">
                   <form onSubmit={saveProduct}>
                      <div className="form-group mb-3">
                         <label for="name">Title</label>

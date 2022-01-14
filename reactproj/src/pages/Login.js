@@ -96,8 +96,9 @@ function Login() {
                            </button>
                         </div>
                         <div className={styles.regLink}>
-                           <Link className={styles.link} to="/register">
-                              <li>Register Now</li>
+                           <span className={styles.link}>Don't have an account? Register</span>
+                           <Link className={styles.link2} to="/register">
+                              <li>Here</li>
                            </Link>
                         </div>
                      </div>

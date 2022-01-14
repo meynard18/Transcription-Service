@@ -113,7 +113,7 @@ function Register() {
                            <br />
                            <span>{userInfo.error_list.password}</span>
                         </div>
-
+                        <br/>
                         <div className={styles.btn}>
                            <button type="submit" className={styles.loginBtn}>
                               Register

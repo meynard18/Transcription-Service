@@ -9,6 +9,15 @@
   list-style: none;
   text-decoration: none;
   color: white;
+  padding: 0 .5rem;
+}
+.link2 {
+  list-style: none;
+  text-decoration: none;
+  color: ffe3fe;
+  padding: 0 .5rem;
+  font-weight: 500;
+  font-size: 1rem;
 }
 
 .main {

@@ -77,14 +77,14 @@ function AddProduct() {
 
          <div>
             <div className="card">
-               <div class="card-header">
-                  <h4 className={classes.title}>Add Product</h4>
+               <div className="card-header">
+                  <h4>Add Product</h4>
                   <Link to={'/transcription'} className="btn btn-sm float-end">
                      Transcription
                   </Link>
                </div>
-               <div class="card-body">
-                  <form onSubmit={saveProduct} className={classes.container}>
+               <div className="card-body">
+                  <form onSubmit={saveProduct}>
                      <div className="form-group mb-3">
                         <label for="name" className={classes.subTitle}>Title</label>
                         <input
@@ -98,7 +98,7 @@ function AddProduct() {
                            {productInput.error_list.title}
                         </span>
                      </div>
-                     
+
                      <div className="form-group mb-3">
                         <label for="description" className={classes.subTitle}>Artist</label>
                         <input
@@ -112,7 +112,7 @@ function AddProduct() {
                            {productInput.error_list.artist}
                         </span>
                      </div>
-                     <div className="form-group mb-3" className={classes.subTitle}>
+                     <div class="form-group mb-3" className={classes.subTitle}>
                         <label for="price">Category</label>
                         <input
                            className="form-control"

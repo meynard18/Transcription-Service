@@ -1,10 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import swal from 'sweetalert';
 import logo from './images/logo.png';
 import { NavLink, useNavigate } from 'react-router-dom';
-
-import { Link } from 'react-scroll';
-// import { useGlobalContext } from './Context'
 import {
    AppBar,
    Toolbar,
@@ -22,8 +19,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#440a67',
    },
    navlink: {
-      marginLeft: theme.spacing(60),
+      marginLeft: theme.spacing(55),
       display: 'flex',
+      alignItems:'center',
+
    },
    logo: {
       cursor: 'pointer',
@@ -32,8 +31,26 @@ const useStyles = makeStyles((theme) => ({
    link: {
       textDecoration: 'none',
       color: '#ffe3fe',
-      fontSize: '1rem',
+      fontSize: '.9rem',
       marginLeft: theme.spacing(3),
+      backgroundImage: 'linear-gradient(90deg, #d74d63, #d74d63)',
+      cursor: 'pointer',
+
+      backgroundSize: '0% 0.2rem',
+      backgroundPosition: 'left bottom',
+      backgroundRepeat: 'no-repeat',
+      transition: 'background-size 300ms ease-in-out',
+      '&:hover': {
+         backgroundSize: '100% 0.2rem',
+         color: '#ffe3fe',
+      },
+   },
+
+   btnlogOut: {
+      textDecoration: 'none',
+      color: '#ffe3fe',
+      fontSize: '.9rem',
+      marginLeft: theme.spacing(3.5),
       backgroundImage: 'linear-gradient(90deg, #d74d63, #d74d63)',
       cursor: 'pointer',
 
@@ -50,6 +67,10 @@ const useStyles = makeStyles((theme) => ({
 
 function Navbar() {
    const history = useNavigate();
+   const classes = useStyles();
+   const theme = useTheme();
+   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
 
    const logoutSubmit = (e) => {
       e.preventDefault();
@@ -66,39 +87,31 @@ function Navbar() {
    var AuthButtons = '';
    if (!localStorage.getItem('auth_token')) {
       AuthButtons = (
-         <ul>
-            <li>
-               <NavLink to="/login">Login</NavLink>
-            </li>
-            <li>
-               <NavLink to="/register">Register</NavLink>
-            </li>
-         </ul>
-         // <>
-         //    {' '}
-         //    <NavLink className="nav-link" to="/logIn" className={classes.link}>
-         //       Login
-         //    </NavLink>
-         //    <NavLink
-         //       className="nav-link"
-         //       to="/register"
-         //       className={classes.link}
-         //    >
-         //       Register
-         //    </NavLink>
-         // </>
+         <>
+            <NavLink className={classes.link} to="/login">
+               LOGIN
+            </NavLink>
+
+            <NavLink className={classes.link} to="/register">
+               REGISTER
+            </NavLink>
+         </>
       );
    } else {
       AuthButtons = (
-         <Button variant="text" type="button" onClick={logoutSubmit}>
-            Logout
-         </Button>
+            <Button
+               className={classes.btnlogOut}
+               type="button"
+               variant="text"
+               title
+               onClick={logoutSubmit}
+            >
+               LOGOUT
+            </Button>
+     
       );
    }
 
-   const classes = useStyles();
-   const theme = useTheme();
-   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
    return (
       <AppBar position="sticky" className={classes.navbar}>
          <CssBaseline />
@@ -111,7 +124,7 @@ function Navbar() {
             ) : (
                <div className={classes.navlink}>
                   <NavLink to="/" className={classes.link}>
-                     Home
+                     HOME
                   </NavLink>
 
                   <NavLink
@@ -119,14 +132,14 @@ function Navbar() {
                      to="/aboutUs"
                      className={classes.link}
                   >
-                     About Us
+                     ABOUT US
                   </NavLink>
                   <NavLink
                      className="nav-link"
                      to="/transcription"
                      className={classes.link}
                   >
-                     Transcription
+                     TRANSCRIPTION
                   </NavLink>
 
                   <NavLink to="/faq" className={classes.link}>
@@ -138,21 +151,14 @@ function Navbar() {
                      to="/contactUs"
                      className={classes.link}
                   >
-                     Contact Us
+                     CONTACT US
                   </NavLink>
-                  <NavLink
-                     className="nav-link"
-                     to="/admin"
-                     className={classes.link}
-                  >
-                     Admin
-                  </NavLink>
+
                   {AuthButtons}
                </div>
             )}
          </Toolbar>
       </AppBar>
-
    );
 }
 

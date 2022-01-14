@@ -54,10 +54,10 @@ function Footer() {
                                 <div className="mb-3 mt-3">
                                     <NavLink
                                         // className="nav-link"
-                                        to="/register"
+                                        to="/admin"
                                         className={styles.link}
                                     >
-                                        Register
+                                        Admin
                                     </NavLink>
                                 </div>
 

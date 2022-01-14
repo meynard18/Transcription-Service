@@ -78,13 +78,13 @@ function AddProduct() {
          <div>
             <div className="card">
                <div className="card-header">
-                  <h4>Add Product</h4>
+                  <h4 className={classes.title}>Add Product</h4>
                   <Link to={'/transcription'} className="btn btn-sm float-end">
                      Transcription
                   </Link>
                </div>
                <div className="card-body">
-                  <form onSubmit={saveProduct}>
+                  <form onSubmit={saveProduct} className={classes.container}>
                      <div className="form-group mb-3">
                         <label for="name" className={classes.subTitle}>Title</label>
                         <input

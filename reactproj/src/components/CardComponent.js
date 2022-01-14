@@ -14,21 +14,21 @@ import { StyledCard } from './Card.styled';
 const cardContents = [
    {
       cardImg: icon,
-      cardTitle: 'Title1',
+      cardTitle: 'Personal Transcription',
       cardDescription:
-         'service for bla bla blaservice for service for bla bla blaservice for bla bla bla bla bla bla',
+         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
    },
    {
       cardImg: icon,
-      cardTitle: 'Title2',
+      cardTitle: 'Opm Transcriptions',
       cardDescription:
-         'service for bla bla blaservice for blservice for bla bla blaservice for bla bla blaa bla bla',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
    },
    {
       cardImg: icon,
-      cardTitle: 'Title3',
+      cardTitle: 'Gospel Transcription',
       cardDescription:
-         'service for bla bla blaservice for bla bla blservice for bla bla blaservice for bla bla blaa',
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
    },
 ];
 
@@ -76,7 +76,7 @@ function CardComponent() {
                      <CardMedia
                         component="img"
                         image={item.cardImg}
-                        alt="green iguana"
+                        alt="icon"
                         className={classes.image}
                      />
                   </div>
@@ -84,7 +84,7 @@ function CardComponent() {
                   <CardContent>
                      <Typography
                         gutterBottom
-                        variant="h4"
+                        variant="h5"
                         component="div"
                         align="center"
                      >

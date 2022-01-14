@@ -37,6 +37,8 @@ function Transcriptions() {
       });
    };
 
+
+
    if (loading) {
       return <h4>Loading Product Data...</h4>;
    

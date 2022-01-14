@@ -2,8 +2,31 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
 import { Link, useNavigate } from 'react-router-dom';
-import Sidebar from "../components/admin/Sidebar";
+import Sidebar from '../components/admin/Sidebar';
+import { makeStyles, useTheme } from '@material-ui/core';
 
+const useStyles = makeStyles((theme) => ({
+
+   mainContainer: {
+      display: 'flex',
+      gap: '10vw'
+   },
+   container: {
+      display: 'flex',
+      flexDirection: 'column',
+      width: '100vh',
+      padding: '2rem',
+   },
+
+   title: {
+      textAlign: 'center',
+      fontWeight: '600',
+   },
+   subTitle: {
+      color: 'white',
+      fontSize: '1rem',
+   },
+}));
 
 function AddProduct() {
    const history = useNavigate();
@@ -45,23 +68,25 @@ function AddProduct() {
          }
       });
    };
+
+   const classes = useStyles();
+   const theme = useTheme();
    return (
-      <div>
+      <div className={classes.mainContainer}>
          <Sidebar />
 
-         <div className="container">
-
+         <div>
             <div className="card">
                <div class="card-header">
-                  <h4>Add Product</h4>
+                  <h4 className={classes.title}>Add Product</h4>
                   <Link to={'/transcription'} className="btn btn-sm float-end">
                      Transcription
                   </Link>
                </div>
                <div class="card-body">
-                  <form onSubmit={saveProduct}>
+                  <form onSubmit={saveProduct} className={classes.container}>
                      <div className="form-group mb-3">
-                        <label for="name">Title</label>
+                        <label for="name" className={classes.subTitle}>Title</label>
                         <input
                            className="form-control"
                            type="text"
@@ -73,8 +98,9 @@ function AddProduct() {
                            {productInput.error_list.title}
                         </span>
                      </div>
+                     
                      <div className="form-group mb-3">
-                        <label for="description">Artist</label>
+                        <label for="description" className={classes.subTitle}>Artist</label>
                         <input
                            className="form-control"
                            type="text"
@@ -86,7 +112,7 @@ function AddProduct() {
                            {productInput.error_list.artist}
                         </span>
                      </div>
-                     <div className="form-group mb-3">
+                     <div className="form-group mb-3" className={classes.subTitle}>
                         <label for="price">Category</label>
                         <input
                            className="form-control"
@@ -100,7 +126,7 @@ function AddProduct() {
                         </span>
                      </div>
                      <div className="form-group mb-3">
-                        <label for="inStock">Price</label>
+                        <label for="inStock" className={classes.subTitle}>Price</label>
                         <input
                            className="form-control"
                            type="text"

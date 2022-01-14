@@ -3,7 +3,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 
-import { makeStyles} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
    mainContainer: {
@@ -25,6 +25,10 @@ const useStyles = makeStyles(() => ({
    subTitle: {
       color: 'white',
       fontSize: '1rem',
+   },
+   button: {
+      backgroundColor: '#93329e',
+      color: 'white' ,
    },
 }));
 
@@ -98,7 +102,9 @@ function EditProduct() {
                <div className="card-body">
                   <form onSubmit={updateProduct} className={classes.container}>
                      <div className="form-group mb-3">
-                        <label htmlFor="name" className={classes.subTitle}>Title</label>
+                        <label htmlFor="name" className={classes.subTitle}>
+                           Title
+                        </label>
                         <input
                            className="form-control"
                            type="text"
@@ -109,7 +115,12 @@ function EditProduct() {
                         <span className="text-danger">{errorInput.title}</span>
                      </div>
                      <div className="form-group mb-3">
-                        <label htmlFor="description" className={classes.subTitle}>Artist</label>
+                        <label
+                           htmlFor="description"
+                           className={classes.subTitle}
+                        >
+                           Artist
+                        </label>
                         <input
                            className="form-control"
                            type="text"
@@ -120,7 +131,9 @@ function EditProduct() {
                         <span className="text-danger">{errorInput.artist}</span>
                      </div>
                      <div className="form-group mb-3">
-                        <label htmlFor="category" className={classes.subTitle}>Category</label>
+                        <label htmlFor="category" className={classes.subTitle}>
+                           Category
+                        </label>
                         <input
                            className="form-control"
                            type="text"
@@ -133,7 +146,9 @@ function EditProduct() {
                         </span>
                      </div>
                      <div className="form-group mb-3">
-                        <label htmlFor="price" className={classes.subTitle}>Price</label>
+                        <label htmlFor="price" className={classes.subTitle}>
+                           Price
+                        </label>
                         <input
                            className="form-control"
                            type="text"
@@ -144,7 +159,7 @@ function EditProduct() {
                         <span className="text-danger">{errorInput.price}</span>
                      </div>
 
-                     <button type="submit" className="btn btn-primary">
+                     <button type="submit" className={classes.button}>
                         Update
                      </button>
                   </form>

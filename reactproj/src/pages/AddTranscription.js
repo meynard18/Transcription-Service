@@ -26,6 +26,10 @@ const useStyles = makeStyles((theme) => ({
       color: 'white',
       fontSize: '1rem',
    },
+   button: {
+      backgroundColor: '#93329e',
+      color: 'white' ,
+   },
 }));
 
 function AddProduct() {
@@ -139,7 +143,7 @@ function AddProduct() {
                         </span>
                      </div>
 
-                     <button type="submit" className="btn btn-primary">
+                     <button type="submit" className={classes.button}>
                         Save
                      </button>
                   </form>
